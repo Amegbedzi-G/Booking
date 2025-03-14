@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+  
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50">
+        <img src="./assets/images/top-bg-shape.png" alt="" class="absolute -top-28 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    P I N
+                </h1>
+            </div>
+
+            <br><BR></BR>
+            <div class="pt-20">
+                <p class="text-sm text-n400 dark:text-n500">
+                  Please choose a four-digit PIN. Note that this PIN will be used to access your balance whenever you want to use it. Under no circumstances should you share this PIN with anyone to ensure the security of your account
+                </p>
+       
+
+                <br><br><br><br>
+
+      <form action="submit">
+          <div class="pin-container">
+              <div class="pin-input-group">
+                  <input type="password" maxlength="1" class="pin-box" placeholder="*" required>
+                  <input type="password" maxlength="1" class="pin-box" placeholder="*" required>
+                  <input type="password" maxlength="1" class="pin-box" placeholder="*" required>
+                  <input type="password" maxlength="1" class="pin-box" placeholder="*" required>
+                  <button type="button" class="show-hide-pin">
+                      <i class="ph ph-eye"></i>
+                  </button>
+              </div>
+          </div>
+      </form>
+
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const pinBoxes = document.querySelectorAll('.pin-box');
+              const showHideBtn = document.querySelector('.show-hide-pin');
+              
+              // PIN movement logic
+              pinBoxes.forEach((box, index) => {
+                  box.addEventListener('input', function() {
+                      if (this.value.length === 1 && index < pinBoxes.length - 1) {
+                          pinBoxes[index + 1].focus();
+                      }
+                  });
+
+                  box.addEventListener('keydown', function(e) {
+                      if (e.key === 'Backspace' && !this.value && index > 0) {
+                          pinBoxes[index - 1].focus();
+                      }
+                  });
+              });
+
+              
+              showHideBtn.addEventListener('click', function() {
+                  const icon = this.querySelector('i');
+                  pinBoxes.forEach(box => {
+                      if (box.type === 'password') {
+                          box.type = 'text';
+                          icon.classList.remove('ph-eye');
+                          icon.classList.add('ph-eye-slash');
+                      } else {
+                          box.type = 'password';
+                          icon.classList.remove('ph-eye-slash');
+                          icon.classList.add('ph-eye');
+                      }
+                  });
+              });
+          });
+      </script>
+
+      <style>
+          .pin-input-group {
+              position: relative;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+
+          .show-hide-pin {
+              position: absolute;
+              right: -40px;
+              background: none;
+              border: none;
+              cursor: pointer;
+              color: #666;
+              font-size: 20px;
+          }
+
+          .show-hide-pin:hover {
+              color: #333;
+          }
+      </style>
+
+                      <div class="pt-12">
+                          <a href="../airbook-one.vercel.app/home.html">
+                              <button class="signInLoadingModalOpenButton block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">
+                                  Continue
+                              </button>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+            </main>
+
+
+    </main>
+
+
+
+</body>
+
+</html>

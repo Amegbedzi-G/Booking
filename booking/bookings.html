@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape.png" alt="" class="absolute -top-16 left-0 right-0" />
+        <div class="relative z-10 px-6 pb-36">
+            <div class="helpCenterTab pt-8">
+                <ul class="tab-button flex items-center justify-between gap-2 text-center">
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-white py-2 text-sm font-semibold text-p1 dark:bg-n0 dark:text-white">
+                        Active
+                    </li>
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-b200 py-2 text-sm font-semibold text-white">
+                        Completed
+                    </li>
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-b200 py-2 text-sm font-semibold text-white">
+                        Cancelled
+                    </li>
+                </ul>
+                <div class="pt-10 dark:text-white">
+                    <div class="animationOne content" id="active">
+                        <div class="flex flex-col gap-2">
+                            <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                                <div class="flex items-center justify-between pb-4">
+                                    <div class="flex items-center justify-start gap-2">
+                                        <img src="./assets/images/airline-logo-2.png" alt="" />
+                                        <p class="font-semibold">British Airways</p>
+                                    </div>
+                                    <div class="relative">
+                                        <button id="moreOption1" class="flex size-7 cursor-pointer items-center justify-center rounded-full bg-b50 text-p1 dark:bg-n0 dark:text-white">
+                        <i
+                          class="ph-bold ph-dots-three-vertical text-lg !leading-none"
+                        ></i>
+                      </button>
+                                        <div id="moreOptionModal1" class="modalClose absolute right-0 top-12 z-40 min-w-48 origin-top-right rounded-xl bg-white p-5 shadow-lg duration-500 dark:bg-n0">
+                                            <div class="cancelModalOpenButtons flex cursor-pointer items-center justify-start gap-3 border-b border-dashed border-n100 pb-3 dark:border-n70">
+                                                <div class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                                    <i class="ph ph-x-square"></i>
+                                                </div>
+                                                <p class="text-sm">Cancel</p>
+                                            </div>
+
+                                            <a href="../reshedule-flight/reschedule-flight.html" class="flex cursor-pointer items-center justify-start gap-3 pt-3">
+                                                <div class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                                    <i class="ph ph-calendar"></i>
+                                                </div>
+                                                <p class="text-sm">Reschedule</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between border-y border-dashed border-n100 py-4 dark:border-n70">
+                                    <div class="">
+                                        <p class="pt-2 text-sm text-n400 dark:text-n500">NYC</p>
+                                        <p class="text-3xl font-bold">8.00</p>
+                                        <p class="pt-2 text-sm text-n400 dark:text-n500">
+                                            New York
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <img src="./assets/images/plane-primary-illus.png" alt="" />
+                                        <p class="-mt-1 flex items-center justify-center text-xs text-n400 dark:text-n500">
+                                            1 Seat
+                                            <i class="ph-bold ph-dot text-xl !leading-none"></i> Economy
+                                        </p>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="pt-2 text-sm text-n400 dark:text-n500">LAX</p>
+                                        <p class="text-3xl font-bold">11:00</p>
+                                        <p class="pt-2 text-sm text-n400 dark:text-n500">
+                                            Los Angeles
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between pt-4">
+                                    <div class="flex items-center justify-start gap-4">
+                                        <div class="flex items-center justify-start gap-2">
+                                            <i class="ph ph-calendar text-p1"></i>
+                                            <p class="text-sm text-n400 dark:text-n500">
+                                                Oct 20, 2024
+                                            </p>
+                                        </div>
+                                        <div class="flex items-center justify-start gap-2">
+                                            <i class="ph ph-clock text-p1"></i>
+                                            <p class="text-sm text-n400 dark:text-n500">
+                                                5h 30 Min
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="font-semibold text-p1">
+                                        $2,000,00
+                                        <span class="text-xs font-normal text-n400">/pax</span>
+                                    </p>
+                                </div>
+
+                                <div class="flex gap-2 pt-3">
+                                    <a href="../bookings-details/booking-details.html" class="block w-full rounded-lg bg-p1 py-2 text-center font-semibold text-white">
+                      View Details
+                    </a>
+                                </div>
+                            </div>
+                            <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                                <div class="relative rounded-xl bg-b50 text-white dark:bg-n50">
+                                    <div class="absolute left-2 top-2 flex items-center justify-start gap-2">
+                                        <span class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white">STM</span
+                      >
+                      <span class="text-sm text-n400 dark:text-n500"
+                        >0.5 km</span
+                      >
+                    </div>
+                    <div class="absolute right-2 top-2">
+                      <div class="relative">
+                        <button
+                          id="moreOption2"
+                          class="flex size-7 cursor-pointer items-center justify-center rounded-full border border-p1 bg-b50 text-p1 dark:bg-n0 dark:text-white"
+                        >
+                          <i
+                            class="ph-bold ph-dots-three-vertical text-lg !leading-none"
+                          ></i>
+                        </button>
+                        <div
+                          id="moreOptionModal2"
+                          class="modalClose absolute right-0 top-12 z-40 min-w-48 origin-top-right rounded-xl bg-white p-5 text-black shadow-lg duration-500 dark:bg-n0 dark:text-white"
+                        >
+                          <div
+                            class="cancelModalOpenButtons flex cursor-pointer items-center justify-start gap-3 border-b border-dashed border-n100 pb-3 dark:border-n70"
+                          >
+                            <div
+                              class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50"
+                            >
+                              <i class="ph ph-x-square"></i>
+                            </div>
+                            <p class="text-sm">Cancel</p>
+                          </div>
+
+                          <a
+                            href="./reschedule-flight.html"
+                            class="flex cursor-pointer items-center justify-start gap-3 pt-3"
+                          >
+                            <div
+                              class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50"
+                            >
+                              <i class="ph ph-calendar"></i>
+                            </div>
+                            <p class="text-sm">Reschedule</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      src="./assets/images/car-img-1.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">Tesla Model S</p>
+                    <p class="font-semibold text-p1">
+                      $200
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/day</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Sedan</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star-half"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-3">
+                    <a
+                      href="../bookings-details/booking-details.html"
+                      class="block w-full rounded-lg bg-p1 py-2 text-center font-semibold text-white"
+                    >
+                      View Details
+                    </a>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                  <div class="relative">
+                    <div class="absolute right-2 top-2">
+                      <div class="relative">
+                        <button
+                          id="moreOption3"
+                          class="flex size-7 cursor-pointer items-center justify-center rounded-full border border-p1 bg-b50 text-p1 dark:bg-n0 dark:text-white"
+                        >
+                          <i
+                            class="ph-bold ph-dots-three-vertical text-lg !leading-none"
+                          ></i>
+                        </button>
+                        <div
+                          id="moreOptionModal3"
+                          class="modalClose absolute right-0 top-12 z-40 min-w-48 origin-top-right rounded-xl bg-white p-5 text-black shadow-lg duration-500 dark:bg-n0 dark:text-white"
+                        >
+                          <div
+                            class="cancelModalOpenButtons flex cursor-pointer items-center justify-start gap-3 border-b border-dashed border-n100 pb-3 dark:border-n70"
+                          >
+                            <div
+                              class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50"
+                            >
+                              <i class="ph ph-x-square"></i>
+                            </div>
+                            <p class="text-sm">Cancel</p>
+                          </div>
+
+                          <a
+                            href="./reschedule-flight.html"
+                            class="flex cursor-pointer items-center justify-start gap-3 pt-3"
+                          >
+                            <div
+                              class="flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50"
+                            >
+                              <i class="ph ph-calendar"></i>
+                            </div>
+                            <p class="text-sm">Reschedule</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <img
+                      src="./assets/images/hotel-img2.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">NYC Hotel</p>
+                    <p class="font-semibold text-p1">
+                      $120
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/night</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Manhattan, NY</p>
+                      <p>+1 (212) 111-1111</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph ph-star"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-3">
+                    <a
+                      href="../bookings-details/booking-details.html"
+                      class="block w-full rounded-lg bg-p1 py-2 text-center font-semibold text-white"
+                    >
+                      View Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="animationTwo content hidden" id="completed">
+              <div class="flex flex-col gap-2">
+                <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                  <div
+                    class="relative rounded-xl bg-b50 text-white dark:bg-n50"
+                  >
+                    <div
+                      class="absolute left-2 top-2 flex items-center justify-start gap-2"
+                    >
+                      <span
+                        class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white"
+                        >STM</span
+                      >
+                      <span class="text-sm text-n400 dark:text-n500"
+                        >0.5 km</span
+                      >
+                    </div>
+                    <div
+                      class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white"
+                    >
+                      <i class="ph-fill ph-bookmark-simple text-p1"></i>
+                    </div>
+                    <img
+                      src="./assets/images/car-img-3.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">Audi A4</p>
+                    <p class="font-semibold text-p1">
+                      $160
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/day</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Sedan</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star-half"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-6">
+                    <a
+                      href=""
+                      class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white"
+                    >
+                      Give Review
+                    </a>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                  <div class="relative">
+                    <div
+                      class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white"
+                    >
+                      <i class="ph-fill ph-bookmark-simple text-p1"></i>
+                    </div>
+                    <img
+                      src="./assets/images/hotel-img3.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">Brooklyn Hotel</p>
+                    <p class="font-semibold text-p1">
+                      $150
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/night</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Brooklyn, NY</p>
+                      <p>+1 (718) 222-2222</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star-half"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-6">
+                    <a
+                      href=""
+                      class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white"
+                    >
+                      Give Review
+                    </a>
+                  </div>
+                </div>
+                <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                  <div class="relative">
+                    <div
+                      class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white"
+                    >
+                      <i class="ph-fill ph-bookmark-simple text-p1"></i>
+                    </div>
+                    <img
+                      src="./assets/images/hotel-img1.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">Queens Hotel</p>
+                    <p class="font-semibold text-p1">
+                      $180
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/night</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Queens, NY</p>
+                      <p>+1 (718) 333-3333</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star-half"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-6">
+                    <a
+                      href=""
+                      class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white"
+                    >
+                      Give Review
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="animationTwo content hidden" id="cancelled">
+              <div class="flex flex-col gap-2">
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                  <div class="flex items-center justify-between pb-4">
+                    <div class="flex items-center justify-start gap-2">
+                      <img src="./assets/images/airline-logo-3.png" alt="" />
+                      <p class="font-semibold">Delta Airlines</p>
+                    </div>
+                    <div
+                      class="flex size-7 cursor-pointer items-center justify-center rounded-full bg-b50 text-p1 dark:bg-n0 dark:text-white"
+                    >
+                      <i class="ph-fill ph-bookmark-simple"></i>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center justify-between border-y border-dashed border-n100 py-4 dark:border-n70"
+                  >
+                    <div class="">
+                      <p class="pt-2 text-sm text-n400 dark:text-n500">SFO</p>
+                      <p class="text-3xl font-bold">7.00</p>
+                      <p class="pt-2 text-sm text-n400 dark:text-n500">
+                        San Francisco
+                      </p>
+                    </div>
+                    <div class="">
+                      <img
+                        src="./assets/images/plane-primary-illus.png"
+                        alt=""
+                      />
+                      <p
+                        class="-mt-1 flex items-center justify-center text-xs text-n400 dark:text-n500"
+                      >
+                        1 Seat
+                        <i class="ph-bold ph-dot text-xl !leading-none"></i>
+                        Economy
+                      </p>
+                    </div>
+                    <div class="text-end">
+                      <p class="pt-2 text-sm text-n400 dark:text-n500">ORD</p>
+                      <p class="text-3xl font-bold">10:00</p>
+                      <p class="pt-2 text-sm text-n400 dark:text-n500">
+                        Chicago
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <div class="flex items-center justify-start gap-4">
+                      <div class="flex items-center justify-start gap-2">
+                        <i class="ph ph-calendar text-p1"></i>
+                        <p class="text-sm text-n400 dark:text-n500">
+                          Nov 15, 2024
+                        </p>
+                      </div>
+                      <div class="flex items-center justify-start gap-2">
+                        <i class="ph ph-clock text-p1"></i>
+                        <p class="text-sm text-n400 dark:text-n500">
+                          4h 20 Min
+                        </p>
+                      </div>
+                    </div>
+                    <p class="font-semibold text-p1">
+                      $1,800,00
+                      <span class="text-xs font-normal text-n400">/pax</span>
+                                        </p>
+                                    </div>
+                                    <div class="flex gap-2 pt-6">
+                                        <span class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white">
+                      Cancelled
+                    </span>
+                                    </div>
+                                </div>
+                                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                                    <div class="flex items-center justify-between pb-4">
+                                        <div class="flex items-center justify-start gap-2">
+                                            <img src="./assets/images/airline-logo-4.png" alt="" />
+                                            <p class="font-semibold">Qatar Airways</p>
+                                        </div>
+                                        <div class="flex size-7 cursor-pointer items-center justify-center rounded-full bg-b50 text-p1 dark:bg-n0 dark:text-white">
+                                            <i class="ph-fill ph-bookmark-simple"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between border-y border-dashed border-n100 py-4 dark:border-n70">
+                                        <div class="">
+                                            <p class="pt-2 text-sm text-n400 dark:text-n500">DXB</p>
+                                            <p class="text-3xl font-bold">10.00</p>
+                                            <p class="pt-2 text-sm text-n400 dark:text-n500">Dubai</p>
+                                        </div>
+                                        <div class="">
+                                            <img src="./assets/images/plane-primary-illus.png" alt="" />
+                                            <p class="-mt-1 flex items-center justify-center text-xs text-n400 dark:text-n500">
+                                                1 Seat
+                                                <i class="ph-bold ph-dot text-xl !leading-none"></i> Economy
+                                            </p>
+                                        </div>
+                                        <div class="text-end">
+                                            <p class="pt-2 text-sm text-n400 dark:text-n500">SYD</p>
+                                            <p class="text-3xl font-bold">15:00</p>
+                                            <p class="pt-2 text-sm text-n400 dark:text-n500">
+                                                Sydney
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between pt-4">
+                                        <div class="flex items-center justify-start gap-4">
+                                            <div class="flex items-center justify-start gap-2">
+                                                <i class="ph ph-calendar text-p1"></i>
+                                                <p class="text-sm text-n400 dark:text-n500">
+                                                    Dec 05, 2024
+                                                </p>
+                                            </div>
+                                            <div class="flex items-center justify-start gap-2">
+                                                <i class="ph ph-clock text-p1"></i>
+                                                <p class="text-sm text-n400 dark:text-n500">
+                                                    14h 30 Min
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="font-semibold text-p1">
+                                            $3,500,00
+                                            <span class="text-xs font-normal text-n400">/pax</span>
+                                        </p>
+                                    </div>
+                                    <div class="flex gap-2 pt-6">
+                                        <span class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white">
+                      Cancelled
+                    </span>
+                                    </div>
+                                </div>
+                                <div class="rounded-2xl bg-white p-5 dark:bg-n0">
+                                    <div class="relative rounded-xl bg-b50 text-white dark:bg-n50">
+                                        <div class="absolute left-2 top-2 flex items-center justify-start gap-2">
+                                            <span class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white">STM</span
+                      >
+                      <span class="text-sm text-n400 dark:text-n500"
+                        >0.5 km</span
+                      >
+                    </div>
+                    <div
+                      class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white"
+                    >
+                      <i class="ph-fill ph-bookmark-simple text-p1"></i>
+                    </div>
+                    <img
+                      src="./assets/images/car-img-2.png"
+                      alt=""
+                      class="rounded-2xl"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">BMW 5 Series</p>
+                    <p class="font-semibold text-p1">
+                      $180
+                      <span class="text-xs font-normal text-n400 dark:text-n500"
+                        >/day</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-end justify-between">
+                    <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                      <p>Sedan</p>
+                    </div>
+                    <div class="flex items-center justify-start gap-1 text-p1">
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star"></i>
+                      <i class="ph-fill ph-star-half"></i>
+                      <i class="ph ph-star"></i>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pt-6">
+                    <span
+                      class="block w-full rounded-lg border border-p1 py-2 text-center font-semibold dark:text-white"
+                    >
+                      Cancelled
+                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed bottom-0 left-0 right-0 z-10">
+                    <div class="container overflow-hidden pt-11">
+                        <div class="relative flex items-center justify-around bg-p1 pb-6 pt-8 text-white">
+                            <a href="../airbook-one.vercel.app/home.html" class="text-3xl">
+              <i class="ph ph-house"></i>
+            </a>
+
+                            <a href="../saved/saved-items.html" class="text-3xl">
+              <i class="ph ph-bookmark-simple"></i>
+            </a>
+                            <a href="../saved/saved-items.html">
+                                <div class="absolute -top-11 left-[104px] flex flex-col items-center justify-center">
+                                    <img src="./assets/images/menu-bg.png" alt="" class="" />
+                                    <div class="-mt-[72px] flex size-[52px] items-center justify-center rounded-full bg-white text-3xl text-p1">
+                                        <i class="ph-fill ph-ticket"></i>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center gap-1">
+                                    <p class="text-base font-semibold">Bookings</p>
+                                    <span class="block size-1 rounded-full bg-white"></span>
+                                </div>
+                            </a>
+                            <a href="../wallet/wallet.html" class="text-3xl">
+              <i class="ph ph-wallet"></i>
+            </a>
+                            <a href="../airbook-one.vercel.app/account.html" class="text-3xl">
+              <i class="ph ph-user"></i>
+            </a>
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+    <!-- Cancel Booking Modal Start -->
+    <div class="cancelModal s bottom-modal container fixed inset-0 z-50">
+        <div class="modalBg absolute inset-0 w-full bg-black opacity-30 dark:bg-white"></div>
+        <div class="modal relative z-10 flex h-full flex-col items-end justify-end text-center dark:text-white">
+            <div class="relative w-full overflow-y-auto rounded-t-3xl bg-b50 dark:bg-n50">
+                <div class="absolute left-[43%] top-2 h-1 w-[60px] rounded-full bg-black bg-opacity-15"></div>
+                <div class="px-6 pt-8">
+                    <div class="flex flex-col items-center justify-center gap-3 border-b border-dashed border-n100 pb-7 dark:border-n70">
+                        <p class="w-full text-center text-3xl font-bold">
+                            Cancel Booking
+                        </p>
+                        <p class="text-center0 text-n400 dark:text-n500">
+                            Reset your access effortlessly and regain control
+                        </p>
+                    </div>
+                    <div class="py-7 text-start">
+                        <p class="text-lg font-semibold">
+                            Are you sure you want to cancel your ticket booking now?
+                        </p>
+                        <p class="pt-4 text-sm text-n400 dark:text-n500">
+                            Confirm if you want to cancel your booking.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex w-full items-center justify-between gap-2 rounded-t-2xl bg-white p-6 dark:bg-n0">
+                    <button class="cancelModalCloseButton block w-full rounded-lg border border-p1 py-3 text-center font-semibold dark:text-white">
+              Cancel
+            </button>
+                    <a href="../cancel bookings/cancel-booking.html" class="block w-full rounded-lg bg-p1 py-3 text-center font-semibold text-white">Confirm</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Cancel Booking Modal End -->
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+  <script defer src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Select all tab items and content containers
+  const tabItems = document.querySelectorAll('.tab-item');
+  const contentContainers = document.querySelectorAll('.content');
+
+  // Add click event listener to each tab item
+  tabItems.forEach((tabItem, index) => {
+    tabItem.addEventListener('click', () => {
+      // Remove active state from all tabs
+      tabItems.forEach(item => {
+        item.classList.remove('bg-white', 'text-p1', 'dark:bg-n0', 'dark:text-white');
+        item.classList.add('bg-b200', 'text-white');
+      });
+
+      // Add active state to clicked tab
+      tabItem.classList.remove('bg-b200', 'text-white');
+      tabItem.classList.add('bg-white', 'text-p1', 'dark:bg-n0', 'dark:text-white');
+
+      // Hide all content containers
+      contentContainers.forEach(container => {
+        container.classList.add('hidden');
+      });
+
+      // Show the corresponding content container
+      const contentId = tabItem.textContent.trim().toLowerCase();
+      const activeContent = document.getElementById(contentId);
+      if (activeContent) {
+        activeContent.classList.remove('hidden');
+      }
+    });
+  });
+});
+  </script>
+</body>
+</html>

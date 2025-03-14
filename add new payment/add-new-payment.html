@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Payment - AirBook PWA App</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute left-0 right-0 top-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../payment-method/payment-methods.html" class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Add New Payment
+                </h1>
+            </div>
+            <div class="pt-12">
+                <img src="./assets/images/visa-card.png" alt="" />
+            </div>
+
+            <form class="flex flex-col gap-4 pt-7">
+                <div class="w-full">
+                    <p class="pb-2 text-sm font-semibold dark:text-white">
+                        Card Holder Number
+                    </p>
+                    <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                        <input type="text" placeholder="John Smith" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                    </div>
+                </div>
+                <div class="w-full">
+                    <p class="pb-2 text-sm font-semibold dark:text-white">
+                        Card Number
+                    </p>
+                    <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                        <input type="number" placeholder="John Smith" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between gap-4">
+                    <div class="w-full">
+                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                            Date of issue
+                        </p>
+                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                            <input type="date" placeholder="John Smith" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                            Expiry Date
+                        </p>
+                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                            <input type="date" placeholder="John Smith" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <p class="pb-2 text-sm font-semibold dark:text-white">Country</p>
+                    <div 
+                        class="relative flex w-full items-center justify-between rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white cursor-pointer"
+                        onclick="toggleCountryDropdown()"
+                    >
+                        <p id="selected-country">Select Country</p>
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <!-- Dropdown List -->
+                    <div 
+                        id="country-dropdown"
+                        class="absolute mt-1 max-h-60 w-full overflow-auto rounded-xl border border-n50 bg-white shadow-lg dark:border-n400 dark:bg-n0 dark:text-white hidden z-10"
+                    >
+                    <ul class="list-none p-0">
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Afghanistan')">Afghanistan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Albania')">Albania</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Algeria')">Algeria</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Andorra')">Andorra</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Angola')">Angola</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Antigua and Barbuda')">Antigua and Barbuda</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Argentina')">Argentina</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Armenia')">Armenia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Australia')">Australia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Austria')">Austria</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Azerbaijan')">Azerbaijan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bahamas')">Bahamas</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bahrain')">Bahrain</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bangladesh')">Bangladesh</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Barbados')">Barbados</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Belarus')">Belarus</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Belgium')">Belgium</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Belize')">Belize</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Benin')">Benin</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bhutan')">Bhutan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bolivia')">Bolivia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bosnia and Herzegovina')">Bosnia and Herzegovina</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Botswana')">Botswana</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Brazil')">Brazil</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Brunei')">Brunei</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Bulgaria')">Bulgaria</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Burkina Faso')">Burkina Faso</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Burundi')">Burundi</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Cabo Verde')">Cabo Verde</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Cambodia')">Cambodia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Cameroon')">Cameroon</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Canada')">Canada</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Central African Republic')">Central African Republic</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Chad')">Chad</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Chile')">Chile</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('China')">China</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Colombia')">Colombia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Comoros')">Comoros</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Congo (Democratic Republic)')">Congo (Democratic Republic)</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Congo (Republic)')">Congo (Republic)</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Costa Rica')">Costa Rica</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Croatia')">Croatia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Cuba')">Cuba</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Cyprus')">Cyprus</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Czechia')">Czechia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Denmark')">Denmark</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Djibouti')">Djibouti</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Dominica')">Dominica</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Dominican Republic')">Dominican Republic</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Ecuador')">Ecuador</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Egypt')">Egypt</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('El Salvador')">El Salvador</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Equatorial Guinea')">Equatorial Guinea</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Eritrea')">Eritrea</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Estonia')">Estonia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Eswatini')">Eswatini</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Ethiopia')">Ethiopia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Fiji')">Fiji</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Finland')">Finland</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('France')">France</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Gabon')">Gabon</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Gambia')">Gambia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Georgia')">Georgia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Germany')">Germany</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Ghana')">Ghana</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Greece')">Greece</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Grenada')">Grenada</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Guatemala')">Guatemala</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Guinea')">Guinea</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Guinea-Bissau')">Guinea-Bissau</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Guyana')">Guyana</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Haiti')">Haiti</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Honduras')">Honduras</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Hungary')">Hungary</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Iceland')">Iceland</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('India')">India</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Indonesia')">Indonesia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Iran')">Iran</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Iraq')">Iraq</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Ireland')">Ireland</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Israel')">Israel</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Italy')">Italy</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Jamaica')">Jamaica</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Japan')">Japan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Jordan')">Jordan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kazakhstan')">Kazakhstan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kenya')">Kenya</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kiribati')">Kiribati</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Korea (North)')">Korea (North)</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Korea (South)')">Korea (South)</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kosovo')">Kosovo</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kuwait')">Kuwait</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Kyrgyzstan')">Kyrgyzstan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Laos')">Laos</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Latvia')">Latvia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Lebanon')">Lebanon</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Lesotho')">Lesotho</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Liberia')">Liberia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Libya')">Libya</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Liechtenstein')">Liechtenstein</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Lithuania')">Lithuania</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Luxembourg')">Luxembourg</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Madagascar')">Madagascar</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Malawi')">Malawi</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Malaysia')">Malaysia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Maldives')">Maldives</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mali')">Mali</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Malta')">Malta</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Marshall Islands')">Marshall Islands</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mauritania')">Mauritania</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mauritius')">Mauritius</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mexico')">Mexico</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Micronesia')">Micronesia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Moldova')">Moldova</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Monaco')">Monaco</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mongolia')">Mongolia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Montenegro')">Montenegro</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Morocco')">Morocco</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Mozambique')">Mozambique</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Myanmar')">Myanmar</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Namibia')">Namibia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Nauru')">Nauru</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Nepal')">Nepal</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Netherlands')">Netherlands</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('New Zealand')">New Zealand</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Nicaragua')">Nicaragua</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Niger')">Niger</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Nigeria')">Nigeria</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('North Macedonia')">North Macedonia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Norway')">Norway</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Oman')">Oman</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Pakistan')">Pakistan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Palau')">Palau</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Palestine')">Palestine</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Panama')">Panama</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Papua New Guinea')">Papua New Guinea</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Paraguay')">Paraguay</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Peru')">Peru</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Philippines')">Philippines</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Poland')">Poland</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Portugal')">Portugal</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Qatar')">Qatar</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Romania')">Romania</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Russia')">Russia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Rwanda')">Rwanda</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Saint Kitts and Nevis')">Saint Kitts and Nevis</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Saint Lucia')">Saint Lucia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Saint Vincent and the Grenadines')">Saint Vincent and the Grenadines</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Samoa')">Samoa</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('San Marino')">San Marino</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Sao Tome and Principe')">Sao Tome and Principe</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Saudi Arabia')">Saudi Arabia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Senegal')">Senegal</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Serbia')">Serbia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Seychelles')">Seychelles</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Sierra Leone')">Sierra Leone</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Singapore')">Singapore</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Slovakia')">Slovakia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Slovenia')">Slovenia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Solomon Islands')">Solomon Islands</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Somalia')">Somalia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('South Africa')">South Africa</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('South Sudan')">South Sudan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Spain')">Spain</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Sri Lanka')">Sri Lanka</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Sudan')">Sudan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Suriname')">Suriname</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Sweden')">Sweden</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Switzerland')">Switzerland</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Syria')">Syria</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Taiwan')">Taiwan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Tajikistan')">Tajikistan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Tanzania')">Tanzania</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Thailand')">Thailand</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Timor-Leste')">Timor-Leste</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Togo')">Togo</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Tonga')">Tonga</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Trinidad and Tobago')">Trinidad and Tobago</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Tunisia')">Tunisia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Turkey')">Turkey</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Turkmenistan')">Turkmenistan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Tuvalu')">Tuvalu</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Uganda')">Uganda</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Ukraine')">Ukraine</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('United Arab Emirates')">United Arab Emirates</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('United Kingdom')">United Kingdom</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('United States')">United States</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Uruguay')">Uruguay</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Uzbekistan')">Uzbekistan</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Vanuatu')">Vanuatu</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Vatican City')">Vatican City</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Venezuela')">Venezuela</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Vietnam')">Vietnam</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Yemen')">Yemen</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Zambia')">Zambia</li>
+                        <li class="p-2 hover:bg-n100 dark:hover:bg-n600" onclick="selectCountry('Zimbabwe')">Zimbabwe</li>
+                    </ul>
+                    
+                    </div>
+                </div>
+                
+                <script>
+                    function toggleCountryDropdown() {
+                        const dropdown = document.getElementById('country-dropdown');
+                        dropdown.classList.toggle('hidden');
+                    }
+                
+                    function selectCountry(country) {
+                        document.getElementById('selected-country').innerText = country;
+                        document.getElementById('country-dropdown').classList.add('hidden');
+                    }
+                </script>
+                
+                    
+
+                </div>
+            </form>
+        </div>
+        <div class="container  bottom-0 left-0 right-0">
+            <div class="rounded-t-3xl bg-white p-6 dark:bg-n6">
+                <a href="../payment-method/payment-methods.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">
+            Save
+          </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+    <script defer src="index.js"></script>
+</body>
+
+</html>

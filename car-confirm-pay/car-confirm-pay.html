@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm & Pay </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute left-0 right-0 top-0" />
+
+        <div class="relative z-10 px-6 pb-28 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../car-details/car-details.html" class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Confirm & Pay
+                </h1>
+            </div>
+            <div class="flex flex-col gap-2 pt-8">
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-3 border-b border-dashed border-n100 pb-4 dark:border-n70">
+                        <div class="flex h-[96px] w-[164px] items-center justify-center overflow-hidden rounded-xl bg-b50 px-1">
+                            <img src="./assets/images/car-img-2.png" alt="" class="object-cover" />
+                        </div>
+                        <div class="">
+                            <div class="flex items-center justify-start gap-2">
+                                <div class="flex items-center justify-start gap-1 rounded-sm bg-b50 px-2 py-0.5 text-xs">
+                                    <i class="ph-fill ph-star text-p1"></i>
+                                    <span>4.5</span>
+                                </div>
+                                <p class="text-xs text-n400 dark:text-n500">
+                                    ( 2365 reviews )
+                                </p>
+                            </div>
+                            <p class="pt-2 font-semibold">Road Master</p>
+
+                            <p class="flex items-center justify-start gap-1 pt-2 text-xs text-n400 dark:text-n500">
+                                2 adults
+                                <span class="block size-1 rounded-full bg-p1"></span> 1 children
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <div class="flex items-center justify-between text-sm">
+                            <p class="text-n400 dark:text-n500">Dates</p>
+                            <p>
+                                May 06, 2024 - -June 04, 2024
+                                <i class="ph ph-pencil-simple-line text-p1"></i>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 text-sm">
+                            <p class="text-n400 dark:text-n500">Guests</p>
+                            <p>
+                                2 Adults - 1 Child
+                                <i class="ph ph-pencil-simple-line text-p1"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                    <p class="border-b border-dashed border-n100 pb-3 text-lg font-semibold dark:border-n70">
+                        Transaction Details
+                    </p>
+                    <div class="flex flex-col gap-3 pt-5 text-[13px] font-semibold">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <p>Payment Method</p>
+                            </div>
+                            <p>
+                                AirBook Wallet
+                                <i class="ph ph-pencil-simple-line pl-1 text-base !leading-none text-p1"></i>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <p>Booking ID</p>
+                            </div>
+                            <p>
+                                NHD65465
+                                <i class="ph ph-copy pl-1 text-base !leading-none text-p1"></i>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <p>Reference ID</p>
+                            </div>
+                            <p>
+                                NHD65465
+                                <i class="ph ph-copy pl-1 text-base !leading-none text-p1"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                    <div class="flex items-center justify-between pb-5">
+                        <p class="text-lg font-semibold">Choose how to pay</p>
+                    </div>
+                    <div class="filterRefuntReschedule flex flex-col gap-2">
+                        <div class="item flex cursor-pointer items-center justify-between rounded-xl border border-n40 p-3 dark:border-n70">
+                            <p class="font-semibold">Pay in full</p>
+
+                            <i class="ph ph-radio-button text-xl !leading-none text-n100"></i>
+                        </div>
+                        <div class="item flex cursor-pointer items-center justify-between rounded-xl border border-n40 p-3 dark:border-n70">
+                            <p class="font-semibold">Pay pat now, part later</p>
+
+                            <i class="ph-fill ph-radio-button text-xl !leading-none text-p1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                    <p class="border-b border-dashed border-n100 pb-3 text-lg font-semibold dark:border-n70">
+                        Price Details
+                    </p>
+                    <div class="flex flex-col gap-3 border-b border-dashed border-n100 pb-3 pt-5 text-[13px] font-semibold dark:border-n70">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <i class="ph ph-bag-simple text-base"></i>
+                                <p>Emirates (Adult) x1</p>
+                            </div>
+                            <p>$1,700,00</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <i class="ph ph-map-pin text-base"></i>
+                                <p>Travel Insurance</p>
+                            </div>
+                            <p>$40.00</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                <i class="ph ph-x-circle text-base"></i>
+                                <p>Tax</p>
+                            </div>
+                            <p>$20.00</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 font-semibold">
+                        <p>Total</p>
+                        <p>$1760.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container fixed bottom-0 left-0 right-0 z-10">
+            <div class="rounded-t-3xl bg-white p-6 dark:bg-n6">
+                <a href="../booking succesful/booking-successfull.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">
+            Pay Now
+          </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+    <script defer src="index.js"></script>
+</body>
+
+</html>

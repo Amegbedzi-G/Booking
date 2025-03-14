@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirBook </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <!-- Splash screen Start -->
+    <div class="preloader inset-0 z-50 hidden">
+        <div class="container relative flex h-full items-center justify-center bg-p1">
+            <img src="./assets/images/star.png" alt="" class="circle absolute left-32 top-10" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute right-8 top-40" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute left-8 top-72" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute right-20 top-72" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute bottom-20 right-10" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute bottom-20 left-10" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute bottom-72 right-10" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute bottom-64 left-10" />
+            <img src="./assets/images/star.png" alt="" class="circle absolute bottom-40 left-48" />
+
+            <div class="zoomInOut flex flex-col items-center justify-center">
+                <img src="./assets/images/logo.png" alt="" />
+                <p class="pt-4 text-[36px] font-bold text-white">AirBook</p>
+            </div>
+        </div>
+    </div>
+    <!-- Splash screen End -->
+
+    <div class="container relative min-h-screen overflow-hidden bg-b50 pb-8 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/dashed-circle.png" alt="" class="absolute left-0 top-24" />
+        <img src="./assets/images/slider-bg.png" alt="" class="circle absolute left-6 right-6 top-20" />
+        <div class="sliderTopProgress flex items-center justify-center pt-[8%]">
+            <div class="relative h-1 w-[200px] rounded-full bg-white dark:bg-n75">
+                <div class="progress absolute left-0 top-0 h-1 bg-p1" style="width: 0%"></div>
+                <div class="absolute -top-1 left-0 size-3 rounded-full bg-p1"></div>
+                <div class="circleTwo absolute -top-1 left-[33%] size-3 rounded-full bg-white dark:bg-n75"></div>
+                <div class="circleThree absolute -top-1 left-[67%] size-3 rounded-full bg-white dark:bg-n75"></div>
+                <div class="circleFour absolute -top-1 right-0 size-3 rounded-full bg-white dark:bg-n75"></div>
+            </div>
+        </div>
+
+        <div class="pt-[20%]">
+            <div class="swiper mobile-screen-slider mx-12">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex items-center justify-center">
+                        <img src="./assets/images/phone-img-1.png" alt="" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center">
+                        <img src="./assets/images/phone-img-2.png" alt="" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center">
+                        <img src="./assets/images/phone-img-3.png" alt="" />
+                    </div>
+                    <div class="swiper-slide flex items-center justify-center">
+                        <img src="./assets/images/phone-img-4.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper onboarding-steps-slider mx-6 -mt-[180px] pt-6">
+                <div class="swiper-wrapper z-30">
+                    <div class="swiper-slide">
+                        <div class="mx-6">
+                            <div class="relative rounded-2xl">
+                                <p class="font-inter text-[36px] font-bold leading-[120%]">
+                                    Plan Your Trip with Simple Steps
+                                </p>
+                                <p class="pt-3 text-sm text-n400 dark:text-n500">
+                                    Choose your destination, select flights, and book effortlessly with just a few taps.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mx-6">
+                            <div class="relative z-10 rounded-2xl">
+                                <p class="font-inter text-[36px] font-bold leading-[120%]">
+                                    Get The Best Deals on Flights
+                                </p>
+                                <p class="pt-3 text-sm text-n400 dark:text-n500">
+                                    Unlock unbeatable flight deals, save big, and enjoy stress-free travel every time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mx-6">
+                            <div class="relative z-10 rounded-2xl">
+                                <p class="font-inter text-[36px] font-bold leading-[120%]">
+                                    Book The Best Flights in Seconds
+                                </p>
+                                <p class="pt-3 text-sm text-n400 dark:text-n500">
+                                    Find and book top-rated flights instantly, saving you time and money today.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="mx-6">
+                            <div class="relative z-10 rounded-2xl">
+                                <p class="font-inter text-[36px] font-bold leading-[120%]">
+                                    Explore The World One Click Away
+                                </p>
+                                <p class="pt-3 text-sm text-n400 dark:text-n500">
+                                    Discover endless destinations, unbeatable deals, and seamless booking with just one click.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative z-20 -mt-[160px] flex h-[320px] w-full items-end justify-end rounded-2xl bg-white px-6 pb-6 dark:bg-n0">
+                    <div class="navigation flex w-full items-center justify-between">
+                        <div class="">
+                            <div class="onBoardingsliderPagingation swiper-pagination"></div>
+                        </div>
+                        <div class="nextButton">
+                            <div class="ara-next">
+                                <button class="flex items-center justify-center rounded-full bg-p1 p-3.5 text-2xl text-white">
+                    <i class="ph ph-caret-right"></i>
+                  </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links relative z-20 hidden w-full flex-col gap-2 pt-6">
+                        <a href="../sign-up/sign-up.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">Create Account</a
+              >
+              <a
+                href="../SIGN IN PAGE/sign-in.html"
+                class="block w-full rounded-xl bg-b50 py-3 text-center font-semibold dark:bg-n75"
+                >Sign In</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="./assets/js/plugins/plugin-custom.js"></script>
+  <script defer src="index.js"></script></body>
+</html>

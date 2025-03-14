@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50">
+        <img src="./assets/images/top-bg-shape.png" alt="" class="absolute -top-12 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../airbook-one.vercel.app/account.html" class="flex size-8 shrink-0 items-center justify-center rounded-full bg-white">
+            <span class="flex size-[18px] items-center justify-center text-p1">
+              <i class="ph ph-caret-left leading-none"></i>
+            </span>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Help Center
+                </h1>
+            </div>
+            <div class="helpCenterTab pt-8">
+                <ul class="tab-button flex items-center justify-between gap-2 text-center">
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-white py-2 text-sm font-semibold text-p1 dark:bg-n0 dark:text-white">
+                        FAQ
+                    </li>
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-b200 py-2 text-sm font-semibold text-white">
+                        Contact Us
+                    </li>
+                </ul>
+                <div class="pt-20 dark:text-white">
+                    <div class="animationOne content" id="faq">
+                        <ul class="faqCategory flex items-center justify-start gap-2">
+                            <li class="item cursor-pointer rounded-lg bg-p1 px-4 py-2 text-sm font-semibold text-white">
+                                General
+                            </li>
+                            <li class="item cursor-pointer rounded-lg bg-white px-4 py-2 text-sm font-semibold dark:bg-n0">
+                                Account
+                            </li>
+                            <li class="item cursor-pointer rounded-lg bg-white px-4 py-2 text-sm font-semibold dark:bg-n0">
+                                E-Ticket
+                            </li>
+                            <li class="item cursor-pointer rounded-lg bg-white px-4 py-2 text-sm font-semibold dark:bg-n0">
+                                Payment
+                            </li>
+                        </ul>
+                        <div class="mt-5 flex items-center justify-between gap-4 rounded-xl border-x border-b-2 border-t border-b75 bg-white p-4 dark:bg-n0">
+                            <input type="text" placeholder="Search" class="w-full bg-transparent text-sm outline-none placeholder:opacity-80" />
+                            <button class="text-xl !leading-none text-n100">
+                  <i class="ph ph-magnifying-glass"></i>
+                </button>
+                        </div>
+                        <div class="flex flex-col gap-2 pt-4">
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">How do I book a flight?</h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">
+                                        Can I change my booking details?
+                                    </h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">How can I cancel my flight?</h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">
+                                        Can I reschedule my flight booking?
+                                    </h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">How do I receive my tickets?</h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-accordion-area cursor-pointer rounded-xl border border-white bg-white dark:border-n0 dark:bg-n0">
+                                <div class="faq-accordion flex items-center justify-between p-4 duration-500">
+                                    <h6 class="font-semibold">
+                                        How do I apply discount codes?
+                                    </h6>
+                                    <div class="">
+                                        <i class="ph-fill ph-caret-down"> </i>
+                                    </div>
+                                </div>
+                                <div class="h-0 overflow-hidden duration-500">
+                                    <p class="mx-4 border-t border-dashed border-n100 pb-4 pt-3 text-xs text-n400 dark:border-n70 dark:text-n500">
+                                        AirBook is an easy-to-use app for seamless flight bookings and management.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animationTwo content hidden" id="contact-us">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-headset text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">Customer Support</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-globe text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">Website</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-whatsapp-logo text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">WhatsApp</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-facebook-logo text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">Facebook</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-twitter-logo text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">Twitter</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                            <div class="flex cursor-pointer items-center justify-between rounded-full border border-white bg-white p-4 dark:border-n0 dark:bg-n0">
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex size-8 items-center justify-center rounded-full bg-b50 dark:bg-n50">
+                                        <i class="ph ph-instagram-logo text-p1"></i>
+                                    </div>
+                                    <p class="font-inter font-medium">Instagram</p>
+                                </div>
+                                <i class="ph ph-caret-right text-xl text-n100"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+    <script defer src="index.js"></script>
+</body>
+
+</html>

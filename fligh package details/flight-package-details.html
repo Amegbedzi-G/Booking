@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Package Details</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape.png" alt="" class="absolute -top-14 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../flight details/flight-details.html" class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Flight Package Details
+                </h1>
+            </div>
+            <div class="helpCenterTab pt-8">
+                <ul class="tab-button flex items-center justify-between gap-2 text-center">
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-white py-2 text-sm font-semibold text-p1 dark:bg-n0 dark:text-white">
+                        Flight
+                    </li>
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-b200 py-2 text-sm font-semibold text-white">
+                        Refund Info
+                    </li>
+                    <li class="tab-item w-full cursor-pointer rounded-full bg-b200 py-2 text-sm font-semibold text-white">
+                        Reschedule
+                    </li>
+                </ul>
+                <div class="pt-20 dark:text-white">
+                    <div class="animationOne content" id="flight">
+                        <div class="flex h-full justify-start gap-1 rounded-3xl bg-white p-5 dark:bg-n0">
+                            <div class="flex flex-col justify-between text-center">
+                                <div class="flex h-full flex-col justify-start">
+                                    <p class="text-2xl font-semibold">09:00</p>
+                                    <p class="pt-2 text-sm text-n400 dark:text-n500">LDN</p>
+                                </div>
+                                <p class="flex h-full flex-col justify-center pt-2 text-sm text-n400 dark:text-n500">
+                                    3h 10 Min
+                                </p>
+                                <div class="flex h-full flex-col justify-end">
+                                    <p class="text-2xl font-semibold">12:00</p>
+                                    <p class="pt-2 text-sm text-n400 dark:text-n500">JTR</p>
+                                </div>
+                            </div>
+                            <div class="h-full">
+                                <img src="./assets/images/flight-package-details-bg.png" alt="" class="h-full max-w-max" />
+                            </div>
+                            <div class="w-full">
+                                <div class="flex flex-col gap-2 pb-4">
+                                    <p class="text-2xl font-semibold">London (LDN), UK</p>
+                                    <p class="text-sm text-n400 dark:text-n500">
+                                        London City Airport (LCY)
+                                    </p>
+                                    <p class="text-sm text-n400 dark:text-n500">Terminal 2</p>
+                                </div>
+                                <div class="rounded-2xl bg-b50 p-3 dark:bg-n50">
+                                    <div class="flex items-center justify-start gap-2">
+                                        <img src="./assets/images/country-logo-1.png" alt="" class="size-8" />
+                                        <p class="font-semibold">Emirates</p>
+                                    </div>
+                                    <div class="flex items-center justify-start gap-2 pb-4 pt-3">
+                                        <p class="text-sm text-n400 dark:text-n500">EK109</p>
+                                        <p class="size-1 rounded-full bg-p1"></p>
+                                        <p class="text-sm text-n400 dark:text-n500">EK109</p>
+                                    </div>
+                                    <div class="flex w-full flex-col gap-3 border-y border-dashed border-n100 pb-3 pt-4 text-[13px] dark:border-n40">
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-bag-simple text-base"></i>
+                                                <p>Cabin Bag</p>
+                                            </div>
+                                            <p>$56 up to 4 kg</p>
+                                        </div>
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-map-pin text-base"></i>
+                                                <p>Check in</p>
+                                            </div>
+                                            <p>$78 up to 10 kgs</p>
+                                        </div>
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-x-circle text-base"></i>
+                                                <p>Cancellation</p>
+                                            </div>
+                                            <p>Refundable</p>
+                                        </div>
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-calendar text-base"></i>
+                                                <p>Date change</p>
+                                            </div>
+                                            <p>Fee starting $45</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex w-full flex-col gap-3 pt-4 text-[13px]">
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-popcorn text-base"></i>
+                                                <p>Meal Available</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between gap-1">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-television-simple text-base"></i>
+                                                <p>Entertainment Available</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-wifi-high text-base"></i>
+                                                <p>Wi-Fi Available</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                                                <i class="ph ph-plug text-base"></i>
+                                                <p>Power/USB Port Available</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2 pt-4">
+                                    <p class="text-2xl font-semibold">Santorini, Greece</p>
+                                    <p class="text-sm text-n400 dark:text-n500">
+                                        Naxos Island National Airport
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animationTwo content hidden" id="refund-info">
+                        <div class="flex flex-col gap-4 rounded-3xl bg-white p-5 dark:bg-n0">
+                            <p class="text-lg font-semibold">Refundable</p>
+                            <div class="border-y border-dashed border-n100 py-4 dark:border-n70">
+                                <p class="font-semibold">
+                                    1. Easy Refunds, Hassle-Free Process
+                                </p>
+                                <p class="pt-4 text-sm text-n400 dark:text-n500">
+                                    Plans change, and we’re here to help. Our easy refund process is designed to give you peace of mind. Simply navigate to your booking details to check your eligibility and request a refund in just a few steps. Refunds depend on your ticket type and the
+                                    airline's terms, but we’ll guide you through every step. If you need any assistance, our support team is available 24/7 to answer your questions and help process your refund as quickly as possible.
+                                </p>
+                            </div>
+                            <div class="border-b border-dashed border-n100 pb-4 dark:border-n70">
+                                <p class="font-semibold">
+                                    2. Quick and Transparent Refund Process
+                                </p>
+                                <p class="pt-4 text-sm text-n400 dark:text-n500">
+                                    Unexpected changes? No problem. Our straightforward refund process makes it easy to get your money back when plans change. Depending on your ticket type and the airline’s policies, you can initiate a refund directly in the app. We strive for complete
+                                    transparency, so you’ll know exactly what to expect. For any questions or support, our dedicated team is always ready to help, ensuring your refund is processed smoothly and swiftly.
+                                </p>
+                            </div>
+                            <div class="">
+                                <p class="font-semibold">
+                                    3. Flexible Refunds for Changing Plans
+                                </p>
+                                <p class="pt-4 text-sm text-n400 dark:text-n500">
+                                    Life happens, and we understand. Our flexible refund policy allows you to easily cancel and request a refund when plans change. Check your booking details for specific eligibility based on your ticket and airline. The process is simple, and we’re here
+                                    to guide you every step of the way. Need more assistance? Contact our 24/7 customer support for quick help and answers to your refund-related questions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animationTwo content hidden" id="reschedule">
+                        <div class="flex flex-col gap-4 rounded-3xl bg-white p-5 dark:bg-n0">
+                            <p class="text-lg font-semibold">Reschedule Information</p>
+                            <div class="border-y border-dashed border-n100 py-4 dark:border-n70">
+                                <p class="pb-2 font-semibold">
+                                    How to Reschedule Your Flight:
+                                </p>
+                                <ul class="flex list-decimal flex-col gap-2 pl-3">
+                                    <li class="text-sm font-semibold dark:text-white">
+                                        Access Your Booking:
+                                        <span class="text-[13px] text-n400 dark:text-n500">Log in to your account or use your booking reference
+                        and last name to access your flight details.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      Select New Dates:
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        Choose your preferred new travel date(s) and time(s).
+                        Flight availability and fare differences may
+                        apply.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      Review Fare Differences:
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        If your new flight has a higher fare, the difference
+                        will be added to the total cost. If it's lower, the
+                        balance will be refunded or credited.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      Confirm Changes:
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        Once you're satisfied with your new selection, confirm
+                        the changes. You will receive a confirmation email with
+                        your updated flight details.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="border-b border-dashed border-n100 pb-4 dark:border-n70"
+                >
+                  <p class="pb-2 font-semibold">Important Notes:</p>
+                  <ul class="flex list-decimal flex-col gap-2 pl-3">
+                    <li class="text-sm font-semibold dark:text-white">
+                      <span class="text-[13px] text-n400 dark:text-n500"
+                        >Rescheduling is subject to availability and airline
+                        policies.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        Fees may apply, depending on the airline and fare
+                        class.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        We’re committed to ensuring your travel experience
+                        remains flexible and hassle-free.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="">
+                  <p class="pb-2 font-semibold">Important Considerations:</p>
+                  <ul class="flex list-decimal flex-col gap-2 pl-3">
+                    <li class="text-sm font-semibold dark:text-white">
+                      Availability:
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        All reschedules are subject to seat availability on the
+                        new flight dates. We recommend booking changes as early
+                        as possible to secure your preferred schedule.</span
+                      >
+                    </li>
+                    <li class="text-sm font-semibold dark:text-white">
+                      Booking Restrictions:
+                      <span class="text-[13px] text-n400 dark:text-n500">
+                        Some promotional or economy-class tickets may have
+                        restrictions on changes. Please refer to your booking
+                        conditions or contact customer support for
+                        clarification.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+  <script defer src="index.js"></script>
+  <script>
+    // Tab switching logic
+document.addEventListener("DOMContentLoaded", () => {
+  const tabButtons = document.querySelectorAll(".tab-item");
+  const tabContents = document.querySelectorAll(".content");
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      // Remove active class from all tabs and hide content
+      tabButtons.forEach((btn) => btn.classList.remove("bg-white", "text-p1"));
+      tabContents.forEach((content) => content.classList.add("hidden"));
+
+      // Activate the clicked tab and show the corresponding content
+      button.classList.add("bg-white", "text-p1");
+      tabContents[index].classList.remove("hidden");
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

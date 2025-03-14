@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute -top-24 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-36">
+            <div class="flex items-center justify-center pt-10">
+                <div class="flex flex-col gap-3">
+                    <div class="">
+                        <img src="./assets/images/user.png" alt="" class="rounded-full" />
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-semibold dark:text-white">Big Malone</p>
+                        <p class="font-semibold text-n400 dark:text-n500">
+                            example@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 pt-7">
+                <a href="../passenger/passenger-list.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-users-three"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">Passengers List</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+                <a href="../discount/discount-voucher.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-tag"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">Discounts / Vouchers</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+                <a href="../airbook/airbook-points.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-coins"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">AirBook Points</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+                <a href="../airb/airbook-rewards.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-radio-button"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">AirBook Rewards</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+
+                <a href="../payment-method/payment-methods.html?showPopup=true" onclick="openTargetPage()" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-wallet"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">Payment Methods</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+
+                <script>
+                    function openTargetPage() {
+                        // Open the target page with a query parameter to indicate the popup should show
+                        window.location.href = 'target.html?showPopup=true';
+                    }
+                </script>
+
+
+
+
+                <a href="../saved-addres/saved-address.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-map-pin"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">Saved Address</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+                <a href="../linked-accounts/linked-accounts.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                    <div class="flex items-center justify-start gap-2">
+                        <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                            <i class="ph ph-arrows-down-up"></i>
+                        </div>
+                        <p class="font-semibold dark:text-white">Linked Accounts</p>
+                    </div>
+                    <i class="ph ph-caret-right text-xl text-n100"></i>
+                </a>
+            </div>
+            <div class="pt-7">
+                <p class="text-xl font-semibold">General</p>
+                <div class="flex flex-col gap-2 pt-4">
+                    <a href="../personal-info/personal-info.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-user"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Personal Info</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+                    <a href="../notification-settings/notification-setting.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-bell-simple"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Notification</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+                    <a href="../security-settings/security-settings.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-shield-check"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Security</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+                    <a href="../language-settings/language-settings.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-translate"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Language</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+
+                    <div class="choose-mode flex cursor-pointer items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-sun icon"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Dark Mode</p>
+                        </div>
+                         <div class="relative h-6 w-11 rounded-full bg-n100 duration-500 dark:bg-n50">
+                            <div class="absolute left-0.5 top-0.5 size-[20px] rounded-full bg-white duration-500 dark:left-[22px]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-7">
+                <p class="text-xl font-semibold">About</p>
+                <div class="flex flex-col gap-2 pt-4">
+                    <a href="../help-center/help-center.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-headset"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">Help Centre</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+                    <a href="../about-airbook/about-airbook.html" class="flex items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-info"></i>
+                            </div>
+                            <p class="font-semibold dark:text-white">About Airbook</p>
+                        </div>
+                        <i class="ph ph-caret-right text-xl text-n100"></i>
+                    </a>
+                    <div class="logoutModalOpenButton flex cursor-pointer items-center justify-between rounded-full bg-white p-3 dark:bg-n0">
+                        <div class="flex items-center justify-start gap-2">
+                            <div class="bg- flex items-center justify-center rounded-full bg-b50 p-2 text-p1 dark:bg-n50">
+                                <i class="ph ph-sign-out"></i>
+                            </div>
+                            <p class="font-semibold text-p1">Logout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixed bottom-0 left-0 right-0 z-10">
+            <div class="container overflow-hidden pt-11">
+                <div class="relative flex items-center justify-around bg-p1 pb-6 pt-8 text-white">
+                    <a href="../airbook-one.vercel.app/home.html" class="text-3xl">
+              <i class="ph ph-house"></i>
+            </a>
+                    <a href="../saved/saved-items.html" class="text-3xl">
+              <i class="ph ph-bookmark-simple"></i>
+            </a>
+                    <a href="../booking/bookings.html" class="text-3xl">
+              <i class="ph ph-ticket"></i>
+            </a>
+                    <a href="../wallet/wallet.html" class="text-3xl">
+              <i class="ph ph-wallet"></i>
+            </a>
+                    <a href="../airbook-one.vercel.app/account.html">
+                        <div class="absolute -right-[52px] -top-11 flex flex-col items-center justify-center">
+                            <img src="./assets/images/menu-bg.png" alt="" class="" />
+                            <div class="-mt-[72px] flex size-[52px] items-center justify-center rounded-full bg-white text-3xl text-p1">
+                                <i class="ph-fill ph-user"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-1">
+                            <p class="text-base font-semibold">Account</p>
+                            <span class="block size-1 rounded-full bg-white"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Logout Modal Start  -->
+    <div class="logoutModal bottom-modal container fixed inset-0 z-50">
+        <div class="modalBg absolute inset-0 w-full bg-black opacity-30 dark:bg-white"></div>
+        <div class="modal relative z-10 flex h-full flex-col items-end justify-end text-center dark:text-white">
+            <div class="absolute bottom-0 left-0 right-0">
+                <img src="./assets/images/logout-modal-bg-white.png" alt="" class="block dark:hidden" />
+                <img src="./assets/images/logout-modal-bg-dark.png" alt="" class="hidden dark:block" />
+            </div>
+            <div class="relative w-full overflow-y-auto rounded-t-3xl">
+                <div class="px-6 pt-8">
+                    <div class="flex flex-col items-center justify-center gap-3 pb-4">
+                        <p class="w-full text-center text-3xl font-bold">Logout</p>
+                        <p class="text-center0 text-n400 dark:text-n500">
+                            Are you sure you want to log out?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex w-full items-center justify-between gap-2 rounded-t-2xl p-6">
+                    <button class="logoutModalCloseButton block w-full rounded-lg border border-p1 py-3 text-center font-semibold dark:text-white">
+              Cancel
+            </button>
+                    <a href="../SIGN IN PAGE/sign-in.html" class="block w-full rounded-lg bg-p1 py-3 text-center font-semibold text-white">Yes, Logout</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logout Modal End -->
+     <script>document.addEventListener("DOMContentLoaded", () => {
+        const logoutModal = document.querySelector(".logoutModal");
+        const logoutModalOpenButton = document.querySelector(".logoutModalOpenButton");
+        const logoutModalCloseButton = document.querySelector(".logoutModalCloseButton");
+        const modalBg = document.querySelector(".modalBg");
+    
+        // Open the modal
+        logoutModalOpenButton.addEventListener("click", () => {
+            logoutModal.classList.add("active"); // Add a class to show the modal
+        });
+    
+        // Close the modal when the close button is clicked
+        logoutModalCloseButton.addEventListener("click", () => {
+            logoutModal.classList.remove("active"); // Remove the class to hide the modal
+        });
+    
+        // Close the modal when clicking on the background
+        modalBg.addEventListener("click", () => {
+            logoutModal.classList.remove("active"); // Remove the class to hide the modal
+        });
+    });
+    
+    
+    </script>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+  <script defer src="index.js"></script>
+
+</body>
+</html>

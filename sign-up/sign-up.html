@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - AirBook PWA App</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+    <script type="module" src="register.js" defer></script>
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50">
+        <img src="./assets/images/top-bg-shape.png" alt="" class="absolute -top-28 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+                <a class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Sign Up
+                </h1>
+            </div>
+            <div class="pt-20">
+                <p class="text-sm text-n400 dark:text-n500">
+                    Create your account now to access personalized features and start your journey with us today!
+                </p>
+                <form class="flex flex-col gap-4 pt-7">
+                    <div class="w-full">
+                        <p class="pb-2 text-sm font-semibold dark:text-white" id="email">Email</p>
+                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                            <input type="email" placeholder="Enter email" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                            Referral Code (optional)
+                        </p>
+                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                            <input type="text" placeholder="Referral Code" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <p class="pb-2 text-sm font-semibold dark:text-white" id="password">Password</p>
+                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                            <input type="password" placeholder="*******" class="placeholder:text-border-n400 w-full bg-transparent outline-none" />
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                            Choose Gender
+                        </p>
+                        <div class="flex items-center justify-between gap-3 text-sm text-n400">
+                            <div class="w-full">
+                                <label for="male" class="flex w-full cursor-pointer items-center justify-between rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                    <input
+                      id="male"
+                      class="peer/male hidden"
+                      type="radio"
+                      name="status"
+                      checked
+                    />
+
+                    Male
+                    <span
+                      class="border-color21 dark:border-color24 peer-checked/male:border-p2 flex size-5 items-center justify-center rounded-full border border-n100 text-sm text-n100 duration-500 peer-checked/male:bg-p1 peer-checked/male:text-white"
+                    >
+                      <i class="ph ph-check"></i>
+                    </span>
+                  </label>
+                            </div>
+
+                            <div class="w-full">
+                                <label for="female" class="flex w-full cursor-pointer items-center justify-between rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                    <input
+                      id="female"
+                      class="peer/female hidden"
+                      type="radio"
+                      name="status"
+                      checked
+                    />
+
+                    Female
+                    <span
+                      class="border-color21 dark:border-color24 peer-checked/female:border-p2 flex size-5 items-center justify-center rounded-full border border-n100 text-sm text-n100 duration-500 peer-checked/female:bg-p1 peer-checked/female:text-white"
+                    >
+                      <i class="ph ph-check"></i>
+                    </span>
+                  </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">                    <div class="">
+                        <label class="flex cursor-pointer gap-2">
+                <input type="checkbox" class="hidden" />
+                <svg viewBox="0 0 64 64" class="size-5 overflow-visible">
+                  <path
+                    d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                    pathLength="575.0541381835938"
+                    class="path fill-none stroke-p1"
+                  ></path>
+                </svg>
+                <p class="text-sm text-n400 dark:text-n500">
+                  Are you sure you want to proceed?
+                </p>
+              </label>
+                    </div>
+                </form>
+                <div class="pt-12">
+                    <a href="..//pin/pin.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white" id="submit">
+              Sign Up
+            </a>
+                    <div class="flex items-center justify-between gap-2 py-7">
+                        <div class="w-full border border-b border-dashed border-n100 dark:border-n70"></div>
+                        <p class="text-nowrap text-sm font-semibold dark:text-white">
+                            Or Continue With
+                        </p>
+                        <div class="dark:border- w-full border border-b border-dashed border-n100 dark:border-n70"></div>
+                    </div>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="flex size-12 items-center justify-center rounded-full bg-white dark:bg-n0">
+                            <img src="./assets/images/google.png" alt="" />
+                        </div>
+                        <div class="flex size-12 items-center justify-center rounded-full bg-white dark:bg-n0">
+                            <img src="./assets/images/apple.png" alt="" />
+                        </div>
+                        <div class="flex size-12 items-center justify-center rounded-full bg-white dark:bg-n0">
+                            <img src="./assets/images/fb.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="pt-4 text-center text-sm font-semibold text-n400 dark:text-n500">
+                        Already have an account?
+                        <a href="../SIGN IN PAGE/sign-in.html" class="text-p1">Sign In</a> here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+    <script defer src="index.js"></script>
+    
+</body>
+
+</html>

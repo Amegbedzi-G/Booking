@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Up - AirBook PWA App</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute -top-4 left-0 right-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../wallet/wallet.html" class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Top Up
+                </h1>
+            </div>
+            <div class="dark:bg-n5 mt-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-n50 bg-white px-5 py-7 dark:border-n400 dark:bg-n0">
+                <p class="flex font-inter text-4xl font-bold">
+                    2,300,00|
+                    <span class="-mt-3 block text-xl font-semibold text-p1">$</span>
+                </p>
+                <p class="pt-3 text-sm text-n400 dark:text-n500">
+                    Available Ballance
+                </p>
+            </div>
+        </div>
+
+        <div class="container fixed bottom-0 left-0 right-0">
+            <div class="px-6 pb-6">
+                <a href="../payment-method/payment-methods.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">Continue</a
+          >
+        </div>
+      </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const logoutModal = document.querySelector(".logoutModal");
+        const logoutModalOpenButton = document.querySelector(".logoutModalOpenButton");
+        const logoutModalCloseButton = document.querySelector(".logoutModalCloseButton");
+        const modalBg = document.querySelector(".modalBg");
+    
+        // Open the modal
+        logoutModalOpenButton.addEventListener("click", () => {
+            logoutModal.classList.add("active"); // Add a class to show the modal
+        });
+    
+        // Close the modal when the close button is clicked
+        logoutModalCloseButton.addEventListener("click", () => {
+            logoutModal.classList.remove("active"); // Remove the class to hide the modal
+        });
+    
+        // Close the modal when clicking on the background
+        modalBg.addEventListener("click", () => {
+            logoutModal.classList.remove("active"); // Remove the class to hide the modal
+        });
+    });
+    
+      </script>
+    
+
+    
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+  <script defer src="index.js"></script></body>
+</html>

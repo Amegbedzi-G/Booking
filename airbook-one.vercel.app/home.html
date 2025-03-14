@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 pb-28 dark:bg-n50">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute left-0 right-0 top-0" />
+
+        <div class="relative z-10 px-6 pb-8 pt-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center justify-start gap-5">
+                    <img src="./assets/images/user.png" alt="" class="size-14 rounded-full" />
+                    <div class="text-white">
+                        <p class="text-2xl font-semibold">Big Malone</p>
+                        <p class="">example@gmail.com</p>
+                    </div>
+                </div>
+                <a href="../notificaton/notification.html" class="flex items-center justify-center rounded-full border border-white p-2 text-white">
+            <i class="ph ph-bell"></i>
+          </a>
+            </div>
+            <div class="homeTab">
+                <div class="tab-button flex items-center justify-between gap-2 pt-10">
+                    <div class="home-tab-item relative w-full cursor-pointer rounded-3xl bg-white p-1 dark:bg-n0">
+                        <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
+                            <div class="activeBar h-0.5 w-16 rounded-t-full bg-p1"></div>
+                        </div>
+                        <div class="b flex w-full items-center justify-center rounded-3xl bg-b50 py-2 dark:bg-n50">
+                            <img src="./assets/images/air.png" alt="" />
+                        </div>
+                        <div class="p-3">
+                            <p class="tab-item-text text-sm font-semibold dark:text-white">
+                                Flight
+                            </p>
+                            <p class="text-xs text-n400 dark:text-n500">Booking</p>
+                        </div>
+                    </div>
+                    <div class="home-tab-item relative w-full cursor-pointer rounded-3xl bg-white p-1 dark:bg-n0">
+                        <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
+                            <div class="activeBar h-0.5 w-16 rounded-t-full bg-b50 dark:bg-n50"></div>
+                        </div>
+                        <div class="b flex w-full items-center justify-center rounded-3xl bg-b50 py-2 dark:bg-n50">
+                            <img src="./assets/images/hotel.png" alt="" />
+                        </div>
+                        <div class="p-3">
+                            <p class="tab-item-text text-sm font-semibold dark:text-white">
+                                Hotel
+                            </p>
+                            <p class="text-xs text-n400 dark:text-n500">Reservation</p>
+                        </div>
+                    </div>
+                    <div class="home-tab-item relative w-full cursor-pointer rounded-3xl bg-white p-1 dark:bg-n0">
+                        <div class="absolute bottom-0 left-0 right-0 flex items-center justify-center">
+                            <div class="activeBar h-0.5 w-16 rounded-t-full bg-b50 dark:bg-n50"></div>
+                        </div>
+                        <div class="b flex w-full items-center justify-center rounded-3xl bg-b50 py-2 dark:bg-n50">
+                            <img src="./assets/images/car.png" alt="" />
+                        </div>
+                        <div class="p-3">
+                            <p class="tab-item-text text-sm font-semibold dark:text-white">
+                                Car
+                            </p>
+                            <p class="text-xs text-n400 dark:text-n500">Rental</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animationOne content" id="flight">
+                    <div class="mt-7 w-full max-w-sm rounded-3xl bg-b200 pl-5">
+                        <div class="flex items-center justify-between text-white">
+                            <div>
+                                <p class="font-inter text-4xl font-bold">Let’s GO</p>
+                                <p class="pt-1 font-semibold">Here’s to</p>
+                                <p class="text-xs">Your next journey</p>
+                            </div>
+                            <div class="relative">
+                                <img src="./assets/images/lets-go.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotelTab mt-7 rounded-3xl bg-white p-5 dark:bg-n0">
+                        <ul class="tab-button flex items-center justify-between gap-2 border-b border-dashed border-n100 pb-4 text-sm font-semibold dark:border-n70">
+                            <li class="tab-item w-full cursor-pointer rounded-full border border-p1 bg-p1 py-2 text-center text-white">
+                                One Way
+                            </li>
+                            <li class="tab-item w-full cursor-pointer rounded-full border border-b75 bg-b50 py-2 text-center text-p1 dark:border-n70 dark:bg-n75 dark:text-white">
+                                Round Trip
+                            </li>
+                            <li class="tab-item w-full cursor-pointer rounded-full border border-b75 bg-b50 py-2 text-center text-p1 dark:border-n70 dark:bg-n75 dark:text-white">
+                                Multi City
+                            </li>
+                        </ul>
+                        <div class="pt-4">
+                            <div class="animationOne content" id="one-way">
+                                <div class="flex flex-col gap-4">
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            From
+                                        </p>
+                                        <a href="../select origin/select-origin.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Origin</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            To
+                                        </p>
+                                        <a href="../select destination/select-destination.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Destination</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            Departure Date
+                                        </p>
+                                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <input type="datetime-local" class="w-full bg-transparent text-n400 outline-none placeholder:text-n400" />
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Passengers
+                                            </p>
+                                            <div class="passengerModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Seats</p>
+                                            </div>
+                                        </div>
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Class
+                                            </p>
+                                            <div class="seatClassModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Class</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="../search-flight/search-flight.html" class="flex items-center justify-between rounded-xl bg-p1 p-3 text-white">
+                      <span>Search Flight</span>
+                      <i class="ph ph-arrow-right text-xl !leading-none"></i>
+                    </a>
+                                </div>
+                            </div>
+                            <div class="animationTwo content hidden" id="round-trip">
+                                <div class="flex flex-col gap-4">
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            From
+                                        </p>
+                                        <a href="../select origin/select-origin.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Origin</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            To
+                                        </p>
+                                        <a href="../select destination/select-destination.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Destination</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            Departure Date
+                                        </p>
+                                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <input type="date" class="w-full bg-transparent text-n400 outline-none placeholder:text-n400" />
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Passengers
+                                            </p>
+                                            <div class="passengerModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Seats</p>
+                                            </div>
+                                        </div>
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Class
+                                            </p>
+                                            <div class="seatClassModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Class</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="../search-flight/search-flight.html" class="flex items-center justify-between rounded-xl bg-p1 p-3 text-white">
+                      <span>Search Flight</span>
+                      <i class="ph ph-arrow-right text-xl !leading-none"></i>
+                    </a>
+                                </div>
+                            </div>
+                            <div class="animationTwo content hidden" id="multi-city">
+                                <div class="flex flex-col gap-4">
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            From
+                                        </p>
+                                        <a href="../select origin/select-origin.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Origin</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            To
+                                        </p>
+                                        <a href="../select destination/select-destination.html" class="block w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <p class="text-sm text-n400">Destination</p>
+                                        </a>
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="pb-2 text-sm font-semibold dark:text-white">
+                                            Departure Date
+                                        </p>
+                                        <div class="w-full rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                            <input type="date" class="w-full bg-transparent text-n400 outline-none placeholder:text-n400" />
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Passengers
+                                            </p>
+                                            <div class="passengerModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Seats</p>
+                                            </div>
+                                        </div>
+                                        <div class="w-full">
+                                            <p class="pb-2 text-sm font-semibold dark:text-white">
+                                                Class
+                                            </p>
+                                            <div class="seatClassModalOpenButton w-full cursor-pointer rounded-xl border-x border-b-2 border-t border-n50 bg-white p-3.5 text-n50 dark:border-n400 dark:bg-n0 dark:text-white">
+                                                <p class="text-sm text-n400">Class</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="../search-flight/search-flight.html" class="flex items-center justify-between rounded-xl bg-p1 p-3 text-white">
+                      <span>Search Flight</span>
+                      <i class="ph ph-arrow-right text-xl !leading-none"></i>
+                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animationTwo content hidden dark:text-white" id="hotel">
+                    <div class="flex flex-col gap-2 pt-8">
+                        <div class="flex items-center justify-between pb-2">
+                            <p class="text-lg font-semibold">Popular Hotel</p>
+                            <a href="../all hotels/all-hotel.html" class="text-sm font-semibold text-p1">View All</a
+                >
+              </div>
+              <a
+                href="../hotel-detaisl/hotel-details.html"
+                class="rounded-2xl bg-white p-5 dark:bg-n0"
+              >
+                <div class="">
+                  <img
+                    src="./assets/images/hotel-img2.png"
+                    alt=""
+                    class="rounded-2xl"
+                  />
+                </div>
+                <div class="flex items-center justify-between pt-4">
+                  <p class="font-semibold">New York Hotel</p>
+                  <p class="font-semibold text-p1">
+                    $120
+                    <span class="text-xs font-normal text-n400 dark:text-n500"
+                      >/night</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>New York, NY</p>
+                    <p>+1 (212) 555-1234</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+                            <a href="../hotel-detaisl/hotel-details.html" class="rounded-2xl bg-white p-5 dark:bg-n0">
+                                <div class="">
+                                    <img src="./assets/images/hotel-img3.png" alt="" class="rounded-2xl" />
+                                </div>
+                                <div class="flex items-center justify-between pt-4">
+                                    <p class="font-semibold">Chicago Hotel</p>
+                                    <p class="font-semibold text-p1">
+                                        $180
+                                        <span class="text-xs font-normal text-n400 dark:text-n500">/night</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>Chicago, IL</p>
+                    <p>+1 (312) 555-1234</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="../hotel-detaisl/hotel-details.html"
+                class="rounded-2xl bg-white p-5 dark:bg-n0"
+              >
+                <div class="">
+                  <img
+                    src="./assets/images/hotel-img1.png"
+                    alt=""
+                    class="rounded-2xl"
+                  />
+                </div>
+                <div class="flex items-center justify-between pt-4">
+                  <p class="font-semibold">Boston Hotel</p>
+                  <p class="font-semibold text-p1">
+                    $150
+                    <span class="text-xs font-normal text-n400 dark:text-n500"
+                      >/night</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>Boston, MA</p>
+                    <p>+1 (617) 555-1234</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="animationTwo content hidden dark:text-white" id="car">
+            <div class="flex flex-col gap-2 pt-8">
+              <div class="flex items-center justify-between pb-2">
+                <p class="text-lg font-semibold">Popular Cars</p>
+                <a href="../all cars/all-cars.html" class="text-sm font-semibold text-p1"
+                  >View All</a
+                >
+              </div>
+              <a
+                href="../car-details/car-details.html"
+                class="rounded-2xl bg-white p-5 dark:bg-n0"
+              >
+                <div class="relative rounded-xl bg-b50 text-white dark:bg-n50">
+                  <div
+                    class="absolute left-2 top-2 flex items-center justify-start gap-2"
+                  >
+                    <span
+                      class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white"
+                      >STM</span
+                    >
+                    <span class="text-sm text-n400 dark:text-n500">0.5 km</span>
+                                </div>
+                                <div class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white">
+                                    <i class="ph ph-heart-straight"></i>
+                                </div>
+                                <img src="./assets/images/car-img-1.png" alt="" class="rounded-2xl" />
+                        </div>
+                        <div class="flex items-center justify-between pt-4">
+                            <p class="font-semibold">Toyota Corolla</p>
+                            <p class="font-semibold text-p1">
+                                $55
+                                <span class="text-xs font-normal text-n400 dark:text-n500">/day</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>Sedan</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="../car-details/car-details.html"
+                class="rounded-2xl bg-white p-5 dark:bg-n0"
+              >
+                <div class="relative rounded-xl bg-b50 text-white dark:bg-n50">
+                  <div
+                    class="absolute left-2 top-2 flex items-center justify-start gap-2"
+                  >
+                    <span
+                      class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white"
+                      >STM</span
+                    >
+                    <span class="text-sm text-n400 dark:text-n500">0.5 km</span>
+                        </div>
+                        <div class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white">
+                            <i class="ph ph-heart-straight"></i>
+                        </div>
+                        <img src="./assets/images/car-img-2.png" alt="" class="rounded-2xl" />
+                    </div>
+                    <div class="flex items-center justify-between pt-4">
+                        <p class="font-semibold">Honda Civic</p>
+                        <p class="font-semibold text-p1">
+                            $45
+                            <span class="text-xs font-normal text-n400 dark:text-n500">/day</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>Sedan</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="../car-details/car-details.html"
+                class="rounded-2xl bg-white p-5 dark:bg-n0"
+              >
+                <div class="relative rounded-xl bg-b50 text-white dark:bg-n50">
+                  <div
+                    class="absolute left-2 top-2 flex items-center justify-start gap-2"
+                  >
+                    <span
+                      class="flex size-10 items-center justify-center rounded-full bg-b200 text-sm text-white"
+                      >STM</span
+                    >
+                    <span class="text-sm text-n400 dark:text-n500">0.5 km</span>
+                    </div>
+                    <div class="absolute right-2 top-2 flex size-7 cursor-pointer items-center justify-center rounded-full bg-white text-black dark:bg-n0 dark:text-white">
+                        <i class="ph ph-heart-straight"></i>
+                    </div>
+                    <img src="./assets/images/car-img-3.png" alt="" class="rounded-2xl" />
+                </div>
+                <div class="flex items-center justify-between pt-4">
+                    <p class="font-semibold">Ford Mustang</p>
+                    <p class="font-semibold text-p1">
+                        $80
+                        <span class="text-xs font-normal text-n400 dark:text-n500">/day</span
+                    >
+                  </p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div class="gap-1 pt-1 text-sm text-n400 dark:text-n500">
+                    <p>Convertible</p>
+                  </div>
+                  <div class="flex items-center justify-start gap-1 text-p1">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                    <i class="ph ph-star"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fixed bottom-0 left-0 right-0 z-10">
+        <div class="container overflow-hidden pt-11">
+          <div
+            class="relative flex items-center justify-around bg-p1 pb-6 pt-8 text-white"
+          >
+            <a href="" class="text-3xl">
+              <div
+                class="absolute -left-[54px] -top-11 flex flex-col items-center justify-center"
+              >
+                <img src="./assets/images/menu-bg.png" alt="" class="" />
+                <div
+                  class="-mt-[72px] flex size-[52px] items-center justify-center rounded-full bg-white text-3xl text-p1"
+                >
+                  <i class="ph-fill ph-house"></i>
+                </div>
+              </div>
+              <div class="flex flex-col items-center justify-center gap-1">
+                <p class="text-base font-semibold">Home</p>
+                <span class="block size-1 rounded-full bg-white"></span>
+                </div>
+                </a>
+                <a href="../saved/saved-items.html" class="text-3xl">
+              <i class="ph ph-bookmark-simple"></i>
+            </a>
+                <a href="../booking/bookings.html" class="text-3xl">
+              <i class="ph ph-ticket"></i>
+            </a>
+                <a href="../wallet/wallet.html" class="text-3xl">
+              <i class="ph ph-wallet"></i>
+            </a>
+                <a href="../airbook-one.vercel.app/account.html" class="text-3xl">
+              <i class="ph ph-user"></i>
+            </a>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Noumber of Passenger Modal Start  -->
+    <div class="passengerModal popup-modal container fixed inset-0 z-30">
+        <div class="modalBg absolute inset-0 bg-black opacity-30 dark:bg-white"></div>
+        <div class="modal relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+            <div class="w-full rounded-2xl bg-b50 p-7 dark:bg-n50">
+                <div class="pb-5">
+                    <p class="text-3xl font-bold dark:text-white">
+                        Number of Passenger
+                    </p>
+
+                    <p class="pt-3 text-sm text-n400 dark:text-n500">
+                        Select your preferred seat class for this booking.
+                    </p>
+                </div>
+                <div class="passenger-area flex justify-between border-y border-dashed border-n100 py-5 dark:border-n70">
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="flex items-center justify-center rounded-full bg-white p-2.5 text-xl text-p1 dark:bg-n0">
+                            <i class="ph ph-user"></i>
+                        </div>
+                        <p class="pt-2 text-sm font-semibold">Adult</p>
+                        <p class="pb-4 text-sm text-n400 dark:text-n500">12+ Years</p>
+
+                        <div class="relative h-[100px]">
+                            <div class="absolute -left-3.5 top-[34px] h-[30px] w-10 border-y border-dashed border-p1"></div>
+                            <div class="swiper adult-count-slider h-full">
+                                <div class="swiper-wrapper dark:text-white">
+                                    <div class="swiper-slide">0</div>
+                                    <div class="swiper-slide">1</div>
+                                    <div class="swiper-slide">2</div>
+                                    <div class="swiper-slide">3</div>
+                                    <div class="swiper-slide">4</div>
+                                    <div class="swiper-slide">5</div>
+                                    <div class="swiper-slide">6</div>
+                                    <div class="swiper-slide">7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[200px] w-px border-r border-dashed border-n100 dark:border-n70"></div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="flex items-center justify-center rounded-full bg-white p-2.5 text-xl text-p1 dark:bg-n0">
+                            <i class="ph ph-users"></i>
+                        </div>
+                        <p class="pt-2 text-sm font-semibold">Child</p>
+                        <p class="pb-4 text-sm text-n400 dark:text-n500">2-12 Years</p>
+
+                        <div class="relative h-[100px]">
+                            <div class="absolute -left-3.5 top-[34px] h-[30px] w-10 border-y border-dashed border-p1"></div>
+                            <div class="swiper child-count-slider h-full">
+                                <div class="swiper-wrapper dark:text-white">
+                                    <div class="swiper-slide">0</div>
+                                    <div class="swiper-slide">1</div>
+                                    <div class="swiper-slide">2</div>
+                                    <div class="swiper-slide">3</div>
+                                    <div class="swiper-slide">4</div>
+                                    <div class="swiper-slide">5</div>
+                                    <div class="swiper-slide">6</div>
+                                    <div class="swiper-slide">7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[200px] w-px border-r border-dashed border-n100 dark:border-n70"></div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="flex items-center justify-center rounded-full bg-white p-2.5 text-xl text-p1 dark:bg-n0">
+                            <i class="ph ph-baby"></i>
+                        </div>
+                        <p class="pt-2 text-sm font-semibold">Infant</p>
+                        <p class="pb-4 text-sm text-n400 dark:text-n500">Below age 2</p>
+
+                        <div class="relative h-[100px]">
+                            <div class="absolute -left-3.5 top-[34px] h-[30px] w-10 border-y border-dashed border-p1"></div>
+                            <div class="swiper child-count-slider h-full">
+                                <div class="swiper-wrapper dark:text-white">
+                                    <div class="swiper-slide">0</div>
+                                    <div class="swiper-slide">1</div>
+                                    <div class="swiper-slide">2</div>
+                                    <div class="swiper-slide">3</div>
+                                    <div class="swiper-slide">4</div>
+                                    <div class="swiper-slide">5</div>
+                                    <div class="swiper-slide">6</div>
+                                    <div class="swiper-slide">7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 pt-6">
+                    <button class="passengerModalCloseButton block w-full rounded-lg border border-p1 py-3 text-center font-semibold dark:text-white">
+              Cancel
+            </button>
+                    <a href="" class="block w-full rounded-lg bg-p1 py-3 text-center font-semibold text-white">Confirm</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Noumber of Passenger Modal End -->
+    <!-- Seat Class Modal Start -->
+    <div class="seatClassModal popup-modal container fixed inset-0 z-30">
+      <div
+        class="modalBg absolute inset-0 bg-black opacity-30 dark:bg-white"
+      ></div>
+      <div
+        class="modal relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+      >
+        <div class="w-full rounded-2xl bg-b50 p-7 dark:bg-n50">
+          <div class="pb-5">
+            <p class="text-3xl font-bold dark:text-white">Seat Class</p>
+
+            <p class="pt-3 text-sm text-n400 dark:text-n500">
+              Choose your preferred seat class for the journey.
+            </p>
+          </div>
+          <div class="flex flex-col gap-4 rounded-xl bg-white p-4 dark:bg-n0">
+            <div
+              class="item flex cursor-pointer items-center justify-between border-b border-dashed border-n100 pb-4 dark:border-n70"
+            >
+              <p class="text-n400 dark:text-n500">Economy</p>
+              <i
+                class="ph-fill ph-radio-button radioButton text-xl !leading-none text-p1"
+              ></i>
+            </div>
+            <div
+              class="item flex cursor-pointer items-center justify-between border-b border-dashed border-n100 pb-4 dark:border-n70"
+            >
+              <p class="text-n400 dark:text-n500">Business</p>
+              <i
+                class="ph ph-radio-button radioButton text-xl !leading-none text-n100"
+              ></i>
+            </div>
+            <div class="item flex cursor-pointer items-center justify-between">
+              <p class="text-n400 dark:text-n500">Premium</p>
+              <i
+                class="ph ph-radio-button radioButton text-xl !leading-none text-n100"
+              ></i>
+            </div>
+          </div>
+
+          <div class="flex gap-2 pt-6">
+            <button
+              class="seatClassModalCloseButton block w-full rounded-lg border border-p1 py-3 text-center font-semibold dark:text-white"
+            >
+              Cancel
+            </button>
+            <a
+              href=""
+              class="block w-full rounded-lg bg-p1 py-3 text-center font-semibold text-white"
+              >Confirm</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Seat Class Modal End -->
+
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="..//airbook-one.vercel.app/assets/js/main.js"></script>
+    <script src="..//airbook-one.vercel.app/assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="..//airbook-one.vercel.app/assets/js/plugins/plugin-custom.js"></script>
+  <script defer src="../airbook-one.vercel.app/index.js"></script>
+  <script>
+
+    // Get all the tab buttons and content sections
+const tabButtons = document.querySelectorAll('.home-tab-item');
+const flightContent = document.getElementById('flight');
+const hotelContent = document.getElementById('hotel');
+const carContent = document.getElementById('car');
+
+// Array of all content sections for easier handling
+const allContents = [flightContent, hotelContent, carContent];
+
+// Function to handle tab switching
+function switchTab(index) {
+    // Remove active classes from all tabs
+    tabButtons.forEach(button => {
+        button.querySelector('.activeBar').classList.remove('bg-p1');
+        button.querySelector('.activeBar').classList.add('bg-b50', 'dark:bg-n50');
+        button.querySelector('.b').classList.add('bg-b50', 'dark:bg-n50');
+    });
+
+    // Add active class to selected tab
+    tabButtons[index].querySelector('.activeBar').classList.remove('bg-b50', 'dark:bg-n50');
+    tabButtons[index].querySelector('.activeBar').classList.add('bg-p1');
+    tabButtons[index].querySelector('.b').classList.remove('bg-b50', 'dark:bg-n50');
+
+    // Hide all content sections first
+    allContents.forEach(content => {
+        if (content) {  // Check if content exists
+            content.classList.add('hidden');
+            content.classList.remove('animationOne', 'animationTwo');
+        }
+    });
+
+    // Show selected content section with animation
+    if (allContents[index]) {
+        allContents[index].classList.remove('hidden');
+        allContents[index].classList.add(index === 0 ? 'animationOne' : 'animationTwo');
+    }
+}
+
+// Add click event listeners to tab buttons
+tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        switchTab(index);
+    });
+});
+
+// Initialize with first tab active
+document.addEventListener('DOMContentLoaded', () => {
+    switchTab(0);
+});
+
+// Optional: Add keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const currentIndex = Array.from(tabButtons).findIndex(button => 
+            button.querySelector('.activeBar').classList.contains('bg-p1')
+        );
+        
+        let newIndex;
+        if (e.key === 'ArrowRight') {
+            newIndex = (currentIndex + 1) % tabButtons.length;
+        } else {
+            newIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+        }
+        
+        switchTab(newIndex);
+    }
+});
+
+
+
+// Get all trip type tab buttons and content sections
+const tripTabButtons = document.querySelectorAll('.hotelTab .tab-button li');
+const oneWayContent = document.getElementById('one-way');
+const roundTripContent = document.getElementById('round-trip');
+const multiCityContent = document.getElementById('multi-city');
+
+// Array of all trip content sections
+const allTripContents = [oneWayContent, roundTripContent, multiCityContent];
+
+// Function to handle trip type tab switching
+function switchTripTab(index) {
+    // Remove active classes from all trip tabs
+    tripTabButtons.forEach(button => {
+        button.classList.remove('bg-p1', 'text-white', 'border-p1');
+        button.classList.add('bg-b50', 'text-p1', 'border-b75', 'dark:border-n70', 'dark:bg-n75', 'dark:text-white');
+    });
+
+    // Add active classes to selected trip tab
+    tripTabButtons[index].classList.remove('bg-b50', 'text-p1', 'border-b75', 'dark:border-n70', 'dark:bg-n75', 'dark:text-white');
+    tripTabButtons[index].classList.add('bg-p1', 'text-white', 'border-p1');
+
+    // Hide all trip content sections
+    allTripContents.forEach(content => {
+        if (content) {  // Check if content exists
+            content.classList.add('hidden');
+            content.classList.remove('animationOne', 'animationTwo');
+        }
+    });
+
+    // Show selected trip content section with animation
+    if (allTripContents[index]) {
+        allTripContents[index].classList.remove('hidden');
+        allTripContents[index].classList.add(index === 0 ? 'animationOne' : 'animationTwo');
+    }
+}
+
+// Add click event listeners to trip tab buttons
+tripTabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        switchTripTab(index);
+    });
+});
+
+// Initialize with first trip tab (One Way) active
+document.addEventListener('DOMContentLoaded', () => {
+    switchTripTab(0);
+});
+
+// Optional: Add keyboard navigation for trip types (using Up/Down arrows)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        const currentIndex = Array.from(tripTabButtons).findIndex(button => 
+            button.classList.contains('bg-p1')
+        );
+        
+        let newIndex;
+        if (e.key === 'ArrowDown') {
+            newIndex = (currentIndex + 1) % tripTabButtons.length;
+        } else {
+            newIndex = (currentIndex - 1 + tripTabButtons.length) % tripTabButtons.length;
+        }
+        
+        switchTripTab(newIndex);
+    }
+});
+
+// Add CSS animations if not already present
+const style = document.createElement('style');
+style.textContent = `
+    .animationOne {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .animationTwo {
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Modal Elements
+const passengerModal = document.querySelector('.passengerModal');
+const modalBg = document.querySelector('.modalBg');
+const closeModalButton = document.querySelector('.passengerModalCloseButton');
+const confirmButton = passengerModal.querySelector('a');
+
+// Swiper Instances for Passenger Count
+const adultSwiper = new Swiper('.adult-count-slider', {
+  direction: 'vertical',
+  slidesPerView: 1,
+  centeredSlides: true,
+  loop: true,
+});
+const childSwiper = new Swiper('.child-count-slider', {
+  direction: 'vertical',
+  slidesPerView: 1,
+  centeredSlides: true,
+  loop: true,
+});
+
+// Function to open the modal
+function openPassengerModal() {
+  passengerModal.classList.remove('hidden');
+  passengerModal.classList.add('flex');
+}
+
+// Function to close the modal
+function closePassengerModal() {
+  passengerModal.classList.add('hidden');
+  passengerModal.classList.remove('flex');
+}
+
+// Event Listeners
+modalBg.addEventListener('click', closePassengerModal);
+closeModalButton.addEventListener('click', closePassengerModal);
+confirmButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const selectedAdults = adultSwiper.realIndex;
+  const selectedChildren = childSwiper.realIndex;
+
+  console.log(`Adults: ${selectedAdults}, Children: ${selectedChildren}`);
+  closePassengerModal();
+});
+
+// Example: Trigger to open the modal (customize this as needed)
+document.querySelector('#openPassengerModalButton').addEventListener('click', openPassengerModal);
+
+
+
+
+  </script>
+
+</body>
+</html>

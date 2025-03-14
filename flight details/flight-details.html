@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0" />
+    <title>Flight Details </title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="manifest" href="./manifest.json" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <main class="container relative min-h-screen bg-b50 dark:bg-n50 dark:text-white">
+        <img src="./assets/images/top-bg-shape2.png" alt="" class="absolute left-0 right-0 top-0" />
+
+        <div class="relative z-10 px-6 pb-32 pt-6">
+            <div class="flex items-center justify-start">
+                <a href="../search-flight/search-flight.html" class="flex items-center justify-center rounded-full bg-white p-2">
+            <i class="ph ph-caret-left text-p1"></i>
+          </a>
+                <h1 class="w-full pr-8 text-center text-3xl font-bold text-white">
+                    Flight Details
+                </h1>
+            </div>
+            <div class="pt-8">
+                <div class="rounded-3xl bg-white p-5 dark:bg-n0">
+                    <div class="flex items-center justify-between pb-4">
+                        <div class="flex items-center justify-start gap-2">
+                            <img src="./assets/images/airline-logo-1.png" alt="" />
+                            <p class="font-semibold">Emirates</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between border-y border-dashed border-n100 py-4 dark:border-n70">
+                        <div class="">
+                            <p class="pt-2 text-sm text-n400 dark:text-n500">LDN</p>
+                            <p class="text-3xl font-bold">9.00</p>
+                            <p class="pt-2 text-sm text-n400 dark:text-n500">London</p>
+                        </div>
+                        <div class="">
+                            <img src="./assets/images/plane-primary-illus.png" alt="" />
+                            <p class="-mt-1 flex items-center justify-center text-xs text-n400 dark:text-n500">
+                                1 Seat
+                                <i class="ph-bold ph-dot text-xl !leading-none"></i> Economy
+                            </p>
+                        </div>
+                        <div class="text-end">
+                            <p class="pt-2 text-sm text-n400 dark:text-n500">JTR</p>
+                            <p class="text-3xl font-bold">12:00</p>
+                            <p class="pt-2 text-sm text-n400 dark:text-n500">Santorini</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-start gap-4 pt-4">
+                        <div class="flex items-center justify-start gap-2">
+                            <i class="ph ph-calendar text-p1"></i>
+                            <p class="text-sm text-n400 dark:text-n500">Sep 12, 2024</p>
+                        </div>
+                        <div class="flex items-center justify-start gap-2">
+                            <i class="ph ph-clock text-p1"></i>
+                            <p class="text-sm text-n400 dark:text-n500">3h 10 Min</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 rounded-3xl bg-white p-5 dark:bg-n0">
+                <p class="text-lg font-semibold">Flight Amenities</p>
+                <div class="mt-5 rounded-2xl bg-b50 p-4 dark:bg-n50">
+                    <div class="flex items-center justify-between pb-3">
+                        <div class="flex items-center justify-start gap-2">
+                            <i class="ph-fill ph-airplane-tilt text-2xl !leading-none text-p1"></i>
+                            <p class="text-[13px] font-semibold">Original</p>
+                        </div>
+                        <p class="font-semibold text-p1">
+                            $1,700,00
+                            <span class="text-xs font-normal text-n400">/pax</span>
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-start gap-5 border-y border-dashed border-n100 py-3 dark:border-n70">
+                        <img src="./assets/images/fligh-amenities-illus.png" alt="" />
+                        <div class="flex w-full flex-col gap-5">
+                            <div class="flex items-start justify-between">
+                                <div class="">
+                                    <p class="text-lg font-bold">9.00 am</p>
+                                    <p class="pt-1 text-xs text-n400 dark:text-n500">
+                                        London City Airport (LCY)
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-start gap-1">
+                                    <i class="ph ph-arrow-u-up-right text-xl !leading-none text-p1"></i>
+                                    <p class="text-[13px]">Non - stop</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-between">
+                                <div class="">
+                                    <p class="text-lg font-bold">12:00 pm</p>
+                                    <p class="pt-1 text-xs text-n400 dark:text-n500">
+                                        Naxos Island National Airport (JNX)
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-start gap-1">
+                                    <i class="ph ph-arrow-u-up-right text-xl !leading-none text-p1"></i>
+                                    <p class="text-[13px]">Santorini</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-xs text-n400 dark:text-n500">Gate</p>
+                            <p class="text-lg font-bold">A12</p>
+                        </div>
+                        <div class="h-6 w-px border-r border-dashed border-n100"></div>
+                        <div class="flex flex-col gap-1">
+                            <p class="text-xs text-n400 dark:text-n500">Flight Number</p>
+                            <p class="text-lg font-bold">EK109</p>
+                        </div>
+                        <div class="h-6 w-px border-r border-dashed border-n100"></div>
+                        <div class="flex flex-col gap-1">
+                            <p class="text-xs text-n400 dark:text-n500">Class</p>
+                            <p class="text-lg font-bold">Business</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 border-b border-dashed border-n100 pb-3 pt-5 text-[13px] font-semibold dark:border-n70">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                            <i class="ph ph-bag-simple text-base"></i>
+                            <p>Cabin Bag</p>
+                        </div>
+                        <p>$56 up to 4 kg</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                            <i class="ph ph-map-pin text-base"></i>
+                            <p>Check in</p>
+                        </div>
+                        <p>$78 up to 10 kgs</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                            <i class="ph ph-x-circle text-base"></i>
+                            <p>Cancellation</p>
+                        </div>
+                        <p>Refundable</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center justify-start gap-1 text-n400 dark:text-n500">
+                            <i class="ph ph-calendar text-base"></i>
+                            <p>Date change</p>
+                        </div>
+                        <p>Fee starting $45</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-3">
+                    <div class="flex items-center justify-start gap-2">
+                        <i class="ph ph-popcorn"></i>
+                        <i class="ph ph-laptop"></i>
+                        <i class="ph ph-wifi-high"></i>
+                        <i class="ph ph-plug"></i>
+                    </div>
+                    <a href="../fligh package details/flight-package-details.html" class="flex items-center justify-end gap-1 text-p1">
+              <span class="text-sm font-semibold">Details</span>
+              <i class="ph ph-caret-right"></i>
+            </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fixed bottom-0 left-0 right-0 z-10">
+        <div class="flex items-center justify-between gap-6 rounded-t-3xl bg-white p-6 dark:bg-n6">
+            <div class="">
+                <p class="text-nowrap text-sm font-semibold text-n400 dark:text-n500">
+                    Total price: 1 person
+                </p>
+                <p class="text-2xl font-bold dark:text-white">$1,700,00</p>
+            </div>
+            <a href="../fill in details/fill-in-details.html" class="block w-full rounded-xl bg-p1 py-3 text-center font-semibold text-white">Continue</a
+        >
+      </div>
+    </div>
+    <!-- ======= JavaScript Dependencies ======== -->
+    <script src="./assets/js/main.js"></script>
+  <script defer src="index.js"></script></body>
+</html>
