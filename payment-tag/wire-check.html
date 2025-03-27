@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paypal-Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Check Payment Information</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <style>
+        /* Base styles and reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             margin: 0; 
             padding: 0;
@@ -16,326 +24,634 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh; 
-            font-family: sans-serif; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(120deg, #73cea8, #adaec5); 
+            padding: 20px;
+            position: relative;
+            color: #333;
         }
 
+        /* Header styles */
         header {
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 36px; 
             color: #333;
             margin-bottom: 30px;
+            margin-top: 60px;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.3);
+            width: 100%;
+            padding: 0 20px;
         }
 
-        .container {
-            display: block;
+        /* Main container */
+        .main-container {
+            display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%; 
-            width: 110%; 
+            width: 100%;
+            max-width: 500px;
+            z-index: 1;
         }
 
+        /* Card styles */
         .square {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             padding: 30px;
             text-align: center;
-            width: 350px;
+            width: 100%;
+            max-width: 450px;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
-        .square img {
-            width: 250px;
+        /* Check image */
+        .check-image {
+            width: 200px;
             height: auto;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
+        /* Payment details */
+        .payment-details {
+            text-align: left;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .payment-details p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Text styles */
         .square p {
-            font-size: 18px;
+            font-size: 16px;
             color: #555;
             margin: 10px 0;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.4;
         }
 
-
-        .square button {
+        /* Copy button */
+        .copy-btn {
+            display: block;
+            width: 100%;
             padding: 12px 20px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 18px;
-            border: none;
+            background-color: #f0f0f0;
+            color: #333;
+            font-size: 16px;
+            border: 1px solid #ddd;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .square button:hover {
-            background-color: #45a049;
-        }
-        .square {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    width: 350px;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.square input[type="file"] {
-    display: none; 
-}
-
-.file-label {
-    display: inline-block;
-    cursor: pointer;
-}
-
-.file-label .file-icon {
-    width: 50px; 
-    height: auto;
-    margin-left: 5px;
-}
-
-.square button {
-    padding: 10px 10px;
-    background-color: #547e55;
-    color: white;
-    font-size: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.square button:hover {
-    background-color: #45a049;
-}
-.back-btn img{
-    width:50px;
-    height: 50px;
-    float: left;
-    display: inline;
-    
-}
-.back-btn{
-    position:absolute;
-    top: 10px;
-    left: 20px;
-}
-.container {
+            margin-top: 15px;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
         }
-        .copy-btn {
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5   px;
-            background-color: #f0f0f0;
-            cursor: pointer;
-        }
+
         .copy-btn:hover {
             background-color: #e0e0e0;
         }
 
-
-        .square img{
-            width: 200px;
-
+        .copy-btn i {
+            font-size: 16px;
         }
 
+        /* File upload section */
+        .file-upload-section {
+            margin: 25px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .file-label {
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .file-label:hover {
+            transform: scale(1.05);
+        }
+
+        .file-icon {
+            width: 50px;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .upload-text {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .file-name {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #547e55;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 14px 20px;
+            background-color: #547e55;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(84, 126, 85, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(84, 126, 85, 0.25);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(84, 126, 85, 0.2);
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 14px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .download-btn:hover {
+            background-color: #e9ecef;
+            border-color: #ccc;
+        }
+
+        /* Back button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            padding: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .back-btn img {
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        /* Popup styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 999;
+            backdrop-filter: blur(3px);
+        }
+
+        .popup {
+            width: 90%;
+            max-width: 350px;
+            background: white;
+            border-radius: 12px;
+            position: fixed;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .open-overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 10%;
+        }
+
+        .popup h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .popup button {
+            width: 100%;
+            padding: 14px 0;
+            background: #607fc2;
+            color: white;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(96, 127, 194, 0.2);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .popup button:hover {
+            background: #4a6cb3;
+            box-shadow: 0 6px 10px rgba(96, 127, 194, 0.25);
+        }
+
+        /* Responsive styles */
+        /* Large devices (desktops) */
+        @media (min-width: 1200px) {
+            .square {
+                padding: 40px;
+                max-width: 500px;
+            }
+            
+            .check-image {
+                width: 240px;
+            }
+            
+            .square p {
+                font-size: 18px;
+            }
+            
+            .btn, .download-btn, .copy-btn {
+                padding: 16px;
+                font-size: 18px;
+            }
+        }
+        
+        /* Medium devices (tablets) */
+        @media (max-width: 768px) {
+            header {
+                font-size: 28px;
+                margin-top: 70px;
+            }
+
+            .square {
+                padding: 25px;
+                border-radius: 10px;
+            }
+
+            .check-image {
+                width: 180px;
+            }
+
+            .payment-details {
+                padding: 12px;
+            }
+
+            .payment-details p {
+                font-size: 15px;
+            }
+
+            .square p {
+                font-size: 15px;
+                margin: 8px 0;
+            }
+            
+            .btn, .download-btn, .copy-btn {
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 6px;
+            }
+        }
+        
+        /* Small devices (landscape phones) */
+        @media (max-width: 576px) {
+            body {
+                padding: 15px;
+            }
+            
+            header {
+                font-size: 24px;
+                margin-top: 60px;
+                margin-bottom: 20px;
+            }
+
+            .square {
+                padding: 20px;
+                border-radius: 8px;
+            }
+            
+            .check-image {
+                width: 160px;
+            }
+            
+            .payment-details {
+                padding: 10px;
+                margin: 15px 0;
+            }
+            
+            .payment-details p {
+                font-size: 14px;
+                margin: 6px 0;
+            }
+            
+            .square p {
+                font-size: 14px;
+                margin: 6px 0;
+            }
+            
+            .file-icon {
+                width: 40px;
+            }
+            
+            .upload-text {
+                font-size: 14px;
+            }
+            
+            .btn, .download-btn, .copy-btn {
+                padding: 12px;
+                font-size: 15px;
+                margin-top: 12px;
+            }
+        }
+        
+        /* Extra small devices (phones) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 22px;
+                margin-top: 50px;
+            }
+
+            .back-btn {
+                top: 15px;
+                left: 15px;
+                padding: 6px;
+            }
+
+            .back-btn img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .square {
+                padding: 15px;
+            }
+            
+            .check-image {
+                width: 140px;
+            }
+            
+            .payment-details p {
+                font-size: 13px;
+                margin: 5px 0;
+            }
+            
+            .square p {
+                font-size: 13px;
+                margin: 5px 0;
+            }
+            
+            .popup {
+                padding: 20px;
+            }
+            
+            .popup h2 {
+                font-size: 20px;
+            }
+            
+            .popup p {
+                font-size: 14px;
+            }
+            
+            .popup button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    
-
-    <a href="..//payment-method/payment-methods.html"><span for="back-btn" class="back-btn">
-        <img src="back.png" alt="back-btn">
-    </span>
+    <a href="../payment-method/payment-methods.html" class="back-btn" aria-label="Go back">
+        <img src="back.png" alt="Back">
     </a>
 
     <header>PAYMENT INFO</header>
-    <div class="container">
+    
+    <div class="main-container" id="content-to-pdf">
         <div class="square">
-            <img src="..//payment-tag/cheque.jpg" alt="">
-
-            <p>Bank Name : Bookings</p>
-            <p>Full Name : Bookings</p>
-            <p>Bank Address : Bookings</p>
-            <p>Home Address : Bookings </p>
-
-
-            <div class="container">
-                <p>Account Number  00-000-00</p>
-                <p id="text-to-copy">Routing Number 00-000-00 </p>
-               
-               
+            <img src="../payment-tag/cheque.jpg" alt="Check/Cheque Image" class="check-image">
+            
+            <div class="payment-details" id="payment-info">
+                <p><strong>Bank Name:</strong> Bookings</p>
+                <p><strong>Full Name:</strong> Bookings</p>
+                <p><strong>Bank Address:</strong> Bookings</p>
+                <p><strong>Home Address:</strong> Bookings</p>
+                <p><strong>Account Number:</strong> 00-000-00</p>
+                <p><strong>Routing Number:</strong> 00-000-00</p>
             </div>
             
-    
-<br>
-            <div>
-        <button class="copy-btn" onclick="copyText()">
-    <i class="fas fa-copy"></i>
+            <button class="copy-btn" onclick="copyText()">
+                <i class="fas fa-copy"></i> Copy Check Details
+            </button>
+           
+            <div class="file-upload-section">
+                <input type="file" id="file-input" accept="image/*,.pdf" style="display: none;" onchange="handleFileUpload(this)" />
+                
+                <label for="file-input" class="file-label">
+                    <img src="bill.png" alt="Upload Icon" class="file-icon" />
+                </label>
+                <p class="upload-text">UPLOAD RECEIPT</p>
+                <div id="file-name" class="file-name"></div>
             </div>
-    
-    
-    
-            <!-- File input hidden -->
-    <input type="file" id="file-input" alt="Receipt" style="display: none;" />
-    
-    <!-- Label styled as image -->
-    <label for="file-input" class="file-label">
-        <br>
-         <img src="bill.png" alt="Upload Icon" class="file-icon" />
-    </label>
-    <p>UPLOAD RECEIPT</p>
 
-
-        <div>
-        <button type="submit" class="btn" onclick="openPopup()">I HAVE PAID</button>
-<br>    <br>
-
-        <div id="popup" class="popup container1" >
-
-            <img src="present.png" alt="">
-            <h2>Thank you!<p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Thank you for submiting your Receipt. Kindly wait patiently for verification.</p></h2>
-            <button type="button" onclick="closePopup()">OK</button>
-             
+            <button type="button" class="btn" onclick="openPopup()">I HAVE PAID</button>
+            <button class="download-btn" onclick="downloadPDF()">
+                <i class="fas fa-download"></i> Download as PDF
+            </button>
         </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <img src="present.png" alt="Thank You">
+        <h2>Thank you!</h2>
+        <p>Thank you for submitting your receipt. Kindly wait patiently for verification.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>
+    
+    <script>
+        // File upload handling
+        function handleFileUpload(input) {
+            const fileNameElement = document.getElementById('file-name');
+            if (input.files && input.files[0]) {
+                fileNameElement.textContent = input.files[0].name;
+            } else {
+                fileNameElement.textContent = '';
+            }
+        }
+
+        // Copy text functionality
+        function copyText() {
+            const details = document.getElementById("payment-info").innerText;
+            
+            navigator.clipboard.writeText(details)
+                .then(() => {
+                    const copyBtn = document.querySelector('.copy-btn');
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHTML;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert("Check details copied to clipboard!");
+                });
+        }
+
+        // Popup functionality
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popup-overlay');
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+            overlay.classList.add("open-overlay");
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            overlay.classList.remove("open-overlay");
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // PDF download functionality
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            
+            try {
+                // Show loading indicator
+                const btn = document.querySelector('.download-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+                btn.disabled = true;
+                
+                // Get the content to convert to PDF
+                const element = document.getElementById('content-to-pdf');
+                
+                // Create a canvas from the element
+                const canvas = await html2canvas(element, {
+                    scale: 2, // Higher scale for better quality
+                    useCORS: true, // Allow images from other domains
+                    logging: false
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                
+                // Create PDF instance
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                
+                // Save the PDF
+                pdf.save('check-payment-info.pdf');
+                
+                // Restore button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('There was an error generating the PDF. Please try again.');
+                
+                // Restore button on error
+                const btn = document.querySelector('.download-btn');
+                btn.innerHTML = '<i class="fas fa-download"></i> Download as PDF';
+                btn.disabled = false;
+            }
+        }
         
-    </div>
-        <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-<script>
-async function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-
-    // Get the current page content as an image
-    const element = document.body; 
-    
-    // You can specify any specific element instead of the entire body
-    const canvas = await html2canvas(element);
-    const imgData = canvas.toDataURL('image/png');
-    
-    // Create a PDF instance and add the image
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
-
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-
-    // Save the PDF
-    pdf.save('page-content.pdf');
-}
-</script>
-
-<style>
-.container1{
-width: 100%; 
-height: 40vh;
-background-color:  palevioletred;
-
-}   
-.popup {
-width: 350px;
-background: pink;
-border-radius: 6px;
-position: absolute;
-top: 0%;
-left: 50%;
-transform: translate(-50%, -50%) scaleX(0.1);
-text-align: center;
-padding: 0 30px 30px;
-color: #333;
-visibility: hidden;
-transition: transform 0.4s, top 0.4s;
-}
-
-.open-popup{
-visibility: visible;
-top: 50%;
-transform: translate(-50%, -50%) scaleX(1);
-
-}
-
-
-.popup img{
-width: 100px;
-margin-top: -50px;
-border-radius: 10%;
-
-}
-
-.popup h2{
-font-size: 38px;
-font-weight: 500px;
-margin: 30px 0 10px;
-}
-
-.popup button{
-width: 100%;
-margin-top: 50px;
-padding: 10px 0;
-background: #607fc2;
-color: white;
-border: 0;
-outline: none;
-font-size: 18px;
-border-radius: 4px;
-cursor: pointer;
-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-</style>
-<script>
-let popup = document.getElementById('popup');
-
-function openPopup(){
-    popup.classList.add("open-popup");
-
-}
-
-function closePopup(){
-  popup.classList.remove("open-popup");
-}
-
-</script>
-
-
-
-
-<script>
-    function copyText() {
-        // Select all the text content you want to copy
-        const details = `
-Bank Name: Bookings
-Full Name: Bookings
-Bank Address: Bookings
-Home Address: Bookings
-Account Number: 00-000-00
-Routine Number: 00-000-00
-        `;
-
-        // Use Clipboard API to copy the text
-        navigator.clipboard.writeText(details).then(() => {
-            alert("Details copied to clipboard!");
-        }).catch(err => {
-            console.error("Could not copy details: ", err);
+        // Fix iOS zoom on input focus
+        document.addEventListener('DOMContentLoaded', function() {
+            // First we get the viewport height and multiply it by 1% to get a value for a vh unit
+            let vh = window.innerHeight * 0.01;
+            // Then we set the value in the --vh custom property to the root of the document
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            
+            // We listen to the resize event
+            window.addEventListener('resize', () => {
+                // We execute the same script as before
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            });
         });
-    }
-</script>
-
-
+    </script>
 </body>
 </html>

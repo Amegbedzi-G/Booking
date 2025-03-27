@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paypal-Payment</title>
+    <title>Cash App Payment Information</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             margin: 0; 
             padding: 0;
@@ -16,8 +23,10 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh; 
-            font-family: sans-serif; 
-            background: linear-gradient(120deg, green, white); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #00D632, white); 
+            padding: 20px;
+            position: relative;
         }
 
         header {
@@ -26,14 +35,16 @@
             font-size: 36px; 
             color: #333;
             margin-bottom: 30px;
+            margin-top: 60px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
         }
 
-        .container {
+        .main-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%; 
-            width: 100%; 
+            width: 100%;
+            max-width: 500px;
         }
 
         .square {
@@ -42,14 +53,16 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 30px;
             text-align: center;
-            width: 350px;
+            width: 100%;
+            max-width: 450px;
             box-sizing: border-box;
         }
 
-        .square img {
-            width: 250px;
+        .cash-app-logo {
+            width: 120px;
             height: auto;
             margin-bottom: 20px;
+            max-width: 100%;
         }
 
         .square p {
@@ -59,8 +72,81 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        .tag-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
 
-        .square button {
+        .tag-container p {
+            margin: 0;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .copy-btn {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copy-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .copy-btn i {
+            font-size: 16px;
+        }
+
+        .file-upload-section {
+            margin: 25px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .file-label {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .file-icon {
+            width: 50px;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .file-label:hover .file-icon {
+            transform: scale(1.1);
+        }
+
+        .upload-text {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .file-name {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #4CAF50;
+        }
+
+        .btn {
+            width: 100%;
             padding: 12px 20px;
             background-color: #4CAF50;
             color: white;
@@ -68,140 +154,318 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 12px 20px;
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .back-btn img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover img {
+            transform: scale(1.1);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+        }
+
+        .popup {
+            width: 90%;
+            max-width: 350px;
+            background: white;
+            border-radius: 10px;
+            position: fixed;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .open-overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 10%;
+        }
+
+        .popup h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            width: 100%;
+            padding: 12px 0;
+            background: #4CAF50;
+            color: white;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s;
         }
 
-        .square button:hover {
-            background-color: #45a049;
-        }
-        .square {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    width: 350px;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.square input[type="file"] {
-    display: none; 
-}
-
-.file-label {
-    display: inline-block;
-    cursor: pointer;
-}
-
-.file-label .file-icon {
-    width: 50px; 
-    height: auto;
-    margin-left: 5px;
-}
-
-.square button {
-    padding: 12px 20px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.square button:hover {
-    background-color: #45a049;
-}
-.back-btn img{
-    width:50px;
-    height: 50px;
-    float: left;
-    display: inline;
-    
-}
-.back-btn{
-    position:absolute;
-    top: 10px;
-    left: 20px;
-}
-.container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .copy-btn {
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5   px;
-            background-color: #f0f0f0;
-            cursor: pointer;
-        }
-        .copy-btn:hover {
-            background-color: #e0e0e0;
+        .popup button:hover {
+            background: #45a049;
         }
 
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                font-size: 28px;
+                margin-top: 70px;
+            }
+
+            .square {
+                padding: 20px;
+            }
+
+            .cash-app-logo {
+                width: 100px;
+            }
+
+            .square p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 24px;
+            }
+
+            .back-btn img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .square {
+                padding: 15px;
+            }
+
+            .tag-container {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .copy-btn {
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .btn, .download-btn {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            .popup {
+                padding: 20px;
+            }
+
+            .popup h2 {
+                font-size: 20px;
+            }
+
+            .popup p {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
-    
-
-    <a href="..//payment-method/payment-methods.html"><span for="back-btn" class="back-btn">
-        <img src="back.png" alt="back-btn">
-    </span>
+    <a href="../payment-method/payment-methods.html" class="back-btn">
+        <img src="back.png" alt="Back">
     </a>
 
     <header>PAYMENT INFO</header>
-    <div class="container">
+    
+    <div class="main-container" id="content-to-pdf">
         <div class="square">
-            <img src="cash app.png" alt="">
-            <p>NAME : Bookings</p>
+            <img src="cash app.png" alt="Cash App Logo" class="cash-app-logo">
+            
+            <p>NAME: Bookings</p>
 
-            <div class="container">
-                <p id="text-to-copy">TAG : $booking</p>
+            <div class="tag-container">
+                <p id="text-to-copy">TAG: $booking</p>
                 <button class="copy-btn" onclick="copyText()">
                     <i class="fas fa-copy"></i>
+                </button>
             </div>
-         
-    <!-- File input hidden -->
-    <input type="file" id="file-input" alt="Receipt" style="display: none;" />
-    
-    <!-- Label styled as image -->
-    <label for="file-input" class="file-label">
-        <br>
-         <img src="bill.png" alt="Upload Icon" class="file-icon" />
-    </label>
-    <p>UPLOAD RECEIPT</p>
+           
+            <div class="file-upload-section">
+                <input type="file" id="file-input" accept="image/*,.pdf" style="display: none;" onchange="handleFileUpload(this)" />
+                
+                <label for="file-input" class="file-label">
+                    <img src="bill.png" alt="Upload Icon" class="file-icon" />
+                </label>
+                <p class="upload-text">UPLOAD RECEIPT</p>
+                <div id="file-name" class="file-name"></div>
+            </div>
 
-            <br><br>
-            <a href="#"><button>I HAVE PAID</button></a>
-            <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+            <button type="button" class="btn" onclick="openPopup()">I HAVE PAID</button>
+            <button class="download-btn" onclick="downloadPDF()">
+                <i class="fas fa-download"></i> Download as PDF
+            </button>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script>
-    async function downloadPDF() {
-        const { jsPDF } = window.jspdf;
 
-        // Get the current page content as an image
-        const element = document.body; // You can specify any specific element instead of the entire body
-        const canvas = await html2canvas(element);
-        const imgData = canvas.toDataURL('image/png');
-        
-        // Create a PDF instance and add the image
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup" id="popup">
+        <img src="present.png" alt="Thank You">
+        <h2>Thank you!</h2>
+        <p>Thank you for submitting your receipt. Kindly wait patiently for verification.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>
+    
+    <script>
+        // Copy text functionality
+        function copyText() {
+            const textToCopy = document.getElementById("text-to-copy").textContent;
+            
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    const copyBtn = document.querySelector('.copy-btn');
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHTML;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert("Cash App tag copied to clipboard!");
+                });
+        }
 
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        // File upload handling
+        function handleFileUpload(input) {
+            const fileNameElement = document.getElementById('file-name');
+            if (input.files && input.files[0]) {
+                fileNameElement.textContent = input.files[0].name;
+            } else {
+                fileNameElement.textContent = '';
+            }
+        }
 
-        // Save the PDF
-        pdf.save('page-content.pdf');
-    }
-</script>
+        // Popup functionality
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('popup-overlay');
 
+        function openPopup() {
+            popup.classList.add("open-popup");
+            overlay.classList.add("open-overlay");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            overlay.classList.remove("open-overlay");
+        }
+
+        // PDF download functionality
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            
+            try {
+                // Get the content to convert to PDF
+                const element = document.getElementById('content-to-pdf');
+                
+                // Create a canvas from the element
+                const canvas = await html2canvas(element, {
+                    scale: 2, // Higher scale for better quality
+                    useCORS: true, // Allow images from other domains
+                    logging: false
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                
+                // Create PDF instance
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                
+                // Save the PDF
+                pdf.save('cash-app-payment-info.pdf');
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('There was an error generating the PDF. Please try again.');
+            }
+        }
+    </script>
 </body>
 </html>
