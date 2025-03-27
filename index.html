@@ -139,6 +139,12 @@
             75% { stroke-dashoffset: 225; }
             100% { stroke-dashoffset: 275; }
         }
+
+        .countdown {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #5628ee;
+        }
     </style>
 </head>
 <body>
@@ -165,5 +171,23 @@
     <div class="page-title">
         <a href="./index/index.html"><p>AirBook-Home</p></a>
     </div>
+
+    <div class="countdown"> 5 </div>
+
+    <script>
+        // Countdown and redirect
+        const countdownEl = document.querySelector('.countdown');
+        let timeLeft = 5;
+
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            countdownEl.textContent = ` ${timeLeft} `;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = './index/index.html';
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
